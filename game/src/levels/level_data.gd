@@ -44,10 +44,6 @@ var is_private: bool = false
 ## ROM do usuário (somente fases importadas em execução): fonte dos sprites originais.
 var rom: PackedByteArray = PackedByteArray()
 var card_vram: PackedByteArray = PackedByteArray()  # VRAM durante o cartão de título
-## Lab Zone: sprite do personagem copiado da ROM já carregada, sem trocar o terreno próprio.
-var sprite_rom: PackedByteArray = PackedByteArray()
-var sprite_vram: PackedByteArray = PackedByteArray()
-var sprite_cram: PackedInt32Array = PackedInt32Array()
 
 
 static func from_dict(d: Dictionary, collision: Dictionary, src: String) -> LevelData:

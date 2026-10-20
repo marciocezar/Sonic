@@ -138,23 +138,16 @@ func _apply_profile() -> void:
 		view_w = 640
 		view_h = 448
 		ui_scale = 2
+		view_rect.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	else:
 		view_w = 320
 		view_h = 224
 		ui_scale = 1
+		view_rect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	viewport.size = Vector2i(view_w, view_h)
 	if sim != null:
 		world.configure(sim, Settings.profile)
-	_sync_filter()
 	_layout_view()
-
-
-## Arte original fica nítida (inclusive o 2x do perfil enhanced). O linear só vale para a arte própria.
-func _sync_filter() -> void:
-	if view_rect == null:
-		return
-	var procedural := Settings.profile == "enhanced" and (world == null or world.vram_art == null)
-	view_rect.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR if procedural else CanvasItem.TEXTURE_FILTER_NEAREST
 
 
 func _layout_view() -> void:
@@ -199,13 +192,13 @@ func _process(delta: float) -> void:
 				while acc >= TICK:
 					acc -= TICK
 					card.step()
-					if card.arrived() and world.art_ready():
+					if card.arrived():
 						card.release()
 						world.black_out = false
 						state = "playing"
 						acc = 0.0
 						break
-			elif world.art_ready() and (titlecard_t >= 120 or (press & 0xF0) != 0):
+			elif titlecard_t >= 120 or (press & 0xF0) != 0:
 				state = "playing"
 				acc = 0.0
 		"playing", "dead":
@@ -342,15 +335,6 @@ func _test_progression() -> void:
 	get_tree().quit(0)
 
 
-func _dress_lab(L: LevelData) -> void:
-	if L == null or not L.id.begins_with("lab") or not catalog.importer.is_loaded():
-		return
-	var art: Dictionary = catalog.importer.zone_art(0)
-	L.sprite_rom = catalog.importer.rom
-	L.sprite_vram = art["vram"]
-	L.sprite_cram = PackedInt32Array(art["cram"])
-
-
 func _show_message(t: String) -> void:
 	title_message = t
 	title_message_t = 240
@@ -361,7 +345,6 @@ func start_level(lid: String, keep_score: bool = false) -> void:
 	if L == null:
 		push_error("fase indisponível: " + lid)
 		return
-	_dress_lab(L)
 	var old := sim
 	sim = GameSim.new()
 	sim.setup(L)
@@ -370,13 +353,8 @@ func start_level(lid: String, keep_score: bool = false) -> void:
 		sim.lives = old.lives
 	level_id = lid
 	boss_wait = 0
-	level_title = LevelCatalog._title(lid)
-	if lid == "lab1":
-		level_title = "LAB ZONE"
-	elif lid == "lab2":
-		level_title = "LAB ZONE 2"
+	level_title = LevelCatalog._title(lid) if lid != "lab1" else "LAB ZONE"
 	world.configure(sim, Settings.profile)
-	_sync_filter()
 	_setup_title_card(L)
 	state = "titlecard"
 	titlecard_t = 0
@@ -399,13 +377,11 @@ func _restart_level() -> void:
 	var score := sim.score
 	var lamp := sim.lamp_save
 	var L := catalog.load_level(level_id)
-	_dress_lab(L)
 	sim = GameSim.new()
 	sim.setup(L, lamp)
 	sim.lives = lives
 	sim.score = score
 	world.configure(sim, Settings.profile)
-	_sync_filter()
 	_setup_title_card(L)
 	state = "titlecard"
 	titlecard_t = 60
@@ -452,8 +428,7 @@ func title_actions() -> Array:
 	if catalog.has_originals():
 		items.append(["play_original", "JOGAR"])
 		items.append(["select", "SELECIONAR FASE"])
-	items.append(["play_lab", "JOGAR LAB ZONE"])
-	items.append(["play_lab2", "JOGAR LAB ZONE 2"])
+	items.append(["play_lab", "JOGAR LAB ZONE (PROPRIA)"])
 	items.append(["options", "OPCOES"])
 	if not PlatformInfo.is_web() and not PlatformInfo.is_mobile_native():
 		items.append(["quit", "SAIR"])
@@ -499,8 +474,6 @@ func _title_input(press: int) -> void:
 			menu_index = 0
 		"play_lab":
 			start_level("lab1")
-		"play_lab2":
-			start_level("lab2")
 		"options":
 			options_return = "title"
 			state = "options"

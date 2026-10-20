@@ -1,14 +1,8 @@
-"""Gera as fases PRÓPRIAS do projeto (conteúdo original, publicável).
+"""Gera a fase PRÓPRIA do projeto (conteúdo original, publicável): game/data/levels/lab1.json.
 
-Nada aqui vem da ROM: o terreno é um perfil matemático; mapas de altura, larguras e ângulos saem
-dele, no formato neutro (schema 1). `make demo-level` regrava lab1.json e lab2.json.
-
-Para pôr um objeto na Lab Zone 2, acrescente um item em `_lab2_objects` e rode `make demo-level`.
-Cada item é (x, dy, id, sub): y = chão(x) − dy (y cresce para baixo). id com bit 0x80 lembra
-o estado (TV quebrada, vilão derrotado). IDs que o jogo já executa: 0x25 anéis, 0x26 TV,
-0x41 mola, 0x36 espinhos, 0x40 Motobug, 0x1F Crabmeat, 0x22 Buzz Bomber, 0x2B Chopper,
-0x42 Newtron, 0x0D placa. Subtipo da TV: 2 vida, 3 tênis, 4 escudo, 5 invencível, 6 anéis.
-Mola: 0 vermelha para cima, 2 amarela, 0x10 lateral, 0x20 para baixo.
+Nada aqui vem da ROM: o terreno é um perfil matemático desenhado para o projeto; mapas de altura,
+larguras e ângulos são calculados a partir dele, no mesmo formato neutro (schema 1) que o motor usa.
+Uso: make demo-level
 """
 from __future__ import annotations
 
@@ -59,7 +53,7 @@ def angle_byte(slope: float) -> int:
     return int(round(math.atan(slope) * 128 / math.pi)) & 0xFF
 
 
-def _geometry(surf, platforms):
+def build():
     width_px = W_CHUNKS * 256
     heights_tab = [[0] * 16, [16] * 16]
     angle_tab = [0, 0]
@@ -72,12 +66,12 @@ def _geometry(surf, platforms):
             x0, y0 = cx * 16, cy * 16
             hs = []
             for col in range(16):
-                sy = surf(x0 + col + 0.5)
+                sy = surface(x0 + col + 0.5)
                 fill = (y0 + 16) - sy
                 hs.append(max(0, min(16, int(math.floor(fill + 0.5)))))
             solid = 0x6000
             if all(h == 0 for h in hs):
-                for (a, b, py) in platforms:
+                for (a, b, py) in PLATFORMS:
                     if a <= x0 < b and y0 <= py < y0 + 16:
                         top = int(py - y0)
                         hs = [16 - top] * 16
@@ -86,7 +80,7 @@ def _geometry(surf, platforms):
             if all(h == 0 for h in hs):
                 continue
             flip = 0
-            slope = (surf(x0 + 15.5) - surf(x0 + 0.5)) / 15.0
+            slope = (surface(x0 + 15.5) - surface(x0 + 0.5)) / 15.0
             if solid == 0x6000 and hs[0] > hs[15]:
                 # formas mais altas à esquerda são guardadas espelhadas (bit 11), como no formato de referência
                 hs = list(reversed(hs))
@@ -133,46 +127,6 @@ def _geometry(surf, platforms):
             layout[ky][kx] = chunk_index[key]
     if len(chunk_list) > 0x7F:
         raise SystemExit(f"chunks demais: {len(chunk_list)}")
-    return {
-        "width_px": width_px,
-        "layout": layout,
-        "chunks": chunk_list[1:],
-        "blocks": blocks,
-        "heights_tab": heights_tab,
-        "widths_tab": widths_tab,
-        "angle_tab": angle_tab,
-    }
-
-
-def _pack(meta: dict, surf, platforms, objects: list) -> dict:
-    g = _geometry(surf, platforms)
-    objects = sorted(objects, key=lambda o: o["x"])
-    level = {
-        "schema": 1, "id": meta["id"], "zone": 0x10, "act": meta["act"], "zone_name": meta["zone_name"],
-        "license": "Conteúdo original do projeto sonic-megadrive (ver LICENSES.md)",
-        "start": {"x": 80, "y": int(surf(80)) - 0x13},
-        "limits": {"left": 0, "right": g["width_px"] - 320, "top": 0, "bottom": 0x300},
-        "layout_fg": g["layout"], "layout_bg": [[0] * 0x40 for _ in range(8)],
-        "chunks": g["chunks"], "blocks": [[0, 0, 0, 0] for _ in g["blocks"]],
-        "collision_index": [b[0] for b in g["blocks"]],
-        "loop_chunks": [0x7F, 0x7F], "roll_chunks": [0x7F, 0x7F], "water_level": None,
-        "objects": [{"x": o["x"], "y": o["y"], "yraw": o["y"], "id": o["id"], "sub": o["sub"]} for o in objects],
-        "collision": {"heights": [h for hs in g["heights_tab"] for h in hs],
-                      "widths": [w for ws in g["widths_tab"] for w in ws], "angles": g["angle_tab"]},
-        "theme": "lab",
-    }
-    return level
-
-
-def _ring(surf, x, dy, n, spacing=0):
-    return {"x": x, "y": int(surf(x)) - dy, "id": 0x25, "sub": ((spacing & 0xF) << 4) | (n - 1)}
-
-
-def _at(surf, x, dy, oid, sub=0):
-    return {"x": x, "y": int(surf(x)) - dy, "id": oid, "sub": sub}
-
-
-def build():
     objects = []
     def ring_line(x, y, n, spacing=0):
         objects.append({"x": x, "y": y, "id": 0x25, "sub": ((spacing & 0xF) << 4) | (n - 1)})
@@ -187,83 +141,31 @@ def build():
     ring_line(5620, BASE - 230, 5)
     for i, (x, kind) in enumerate([(700, 6), (2700, 3), (4400, 4), (5900, 5), (6200, 2)]):
         objects.append({"x": x, "y": int(surface(x)) - 15, "id": 0x26 | 0x80, "sub": kind})
-    return _pack({"id": "lab1", "act": 0, "zone_name": "Lab Zone"}, surface, PLATFORMS, objects)
-
-
-def surface2(x: float) -> float:
-    """Segundo ato: o mesmo tipo de perfil, com um vale no começo e um platô no fim."""
-    segs = [
-        (0, 800, lambda t: BASE),
-        (800, 1500, lambda t: BASE - 64 * (1 - math.cos(2 * math.pi * (t - 800) / 700)) / 2),
-        (1500, 1900, lambda t: BASE),
-        (1900, 2300, lambda t: BASE - (t - 1900) * 0.45),
-        (2300, 2800, lambda t: BASE - 180),
-        (2800, 3200, lambda t: BASE - 180 + (t - 2800) * 0.45),
-        (3200, 3600, lambda t: BASE),
-        (3600, 4300, lambda t: BASE + 100 * math.sin(math.pi * (t - 3600) / 700) ** 2),
-        (4300, 5000, lambda t: BASE - 40 * math.sin(2 * math.pi * (t - 4300) / 700)),
-        (5000, 5600, lambda t: BASE - 80 * (1 - math.cos(math.pi * (t - 5000) / 600)) / 2),
-        (5600, 7168, lambda t: BASE - 80),
-    ]
-    for a, b, f in segs:
-        if a <= x < b:
-            return f(x)
-    return BASE - 80
-
-
-PLATFORMS2 = [
-    (1000, 1160, BASE - 130),
-    (2500, 2680, BASE - 250),
-    (4700, 4880, BASE - 140),
-    (6000, 6200, BASE - 180),
-]
-
-
-def _lab2_objects():
-    """Curso de teste. dy é a folga acima do chão. Ver o comentário no topo do arquivo."""
-    s = surface2
-    tv = 0x26 | 0x80
-    out = [
-        _ring(s, 260, 40, 4),
-        _ring(s, 420, 40, 4),
-        _at(s, 620, 16, tv, 6),
-        _at(s, 900, 24, 0x40 | 0x80),
-        _at(s, 1100, 16, 0x41),
-        _ring(s, 1080, 150, 5),
-        _at(s, 1400, 24, 0x1F | 0x80),
-        _at(s, 1680, 96, 0x22 | 0x80),
-        _at(s, 1750, 16, tv, 2),
-        _at(s, 2100, 16, 0x41, 2),
-        _at(s, 2400, 16, 0x36),
-        _ring(s, 2550, 70, 5),
-        _at(s, 2620, 16, 0x41, 0x20),
-        _at(s, 3000, 24, 0x40 | 0x80),
-        _at(s, 3300, 16, tv, 3),
-        _at(s, 3900, 8, 0x2B | 0x80),
-        _at(s, 4200, 24, 0x42 | 0x80, 0),
-        _at(s, 4550, 16, 0x41, 0x10),
-        _at(s, 4800, 16, tv, 4),
-        _at(s, 5100, 24, 0x42 | 0x80, 1),
-        _at(s, 5400, 24, 0x1F | 0x80),
-        _at(s, 5750, 96, 0x22 | 0x80),
-        _at(s, 5900, 16, tv, 5),
-        _ring(s, 6100, 120, 6),
-        _at(s, 6400, 24, 0x40 | 0x80),
-        _at(s, 6700, 24, 0x0D | 0x80),
-    ]
-    return out
-
-
-def build_lab2():
-    return _pack({"id": "lab2", "act": 1, "zone_name": "Lab Zone"}, surface2, PLATFORMS2, _lab2_objects())
+    objects.sort(key=lambda o: o["x"])
+    level = {
+        "schema": 1, "id": "lab1", "zone": 0x10, "act": 0, "zone_name": "Lab Zone",
+        "license": "Conteúdo original do projeto sonic-megadrive (ver LICENSES.md)",
+        "start": {"x": 80, "y": int(surface(80)) - 0x13},
+        "limits": {"left": 0, "right": width_px - 320, "top": 0, "bottom": 0x300},
+        "layout_fg": layout, "layout_bg": [[0] * 0x40 for _ in range(8)],
+        "chunks": chunk_list[1:], "blocks": [[0, 0, 0, 0] for _ in blocks],
+        "collision_index": [b[0] for b in blocks],
+        "loop_chunks": [0x7F, 0x7F], "roll_chunks": [0x7F, 0x7F], "water_level": None,
+        "objects": [{"x": o["x"], "y": o["y"], "yraw": o["y"], "id": o["id"], "sub": o["sub"]} for o in objects],
+        "collision": {"heights": [h for hs in heights_tab for h in hs],
+                      "widths": [w for ws in widths_tab for w in ws], "angles": angle_tab},
+        "theme": "lab",
+    }
+    # chunk 0 implícito (vazio): o formato guarda chunks a partir do ID 1
+    return level
 
 
 def main():
-    for name, lvl in (("lab1", build()), ("lab2", build_lab2())):
-        out = wslib.safe_path(f"game/data/levels/{name}.json")
-        wslib.write_text(out, json.dumps(lvl, separators=(",", ":")) + "\n")
-        wslib.info(f"fase própria gerada: {wslib.rel(out)} ({len(lvl['chunks'])} chunks, "
-                   f"{len(lvl['collision_index'])} blocos, {len(lvl['objects'])} objetos)")
+    lvl = build()
+    out = wslib.safe_path("game/data/levels/lab1.json")
+    wslib.write_text(out, json.dumps(lvl, separators=(",", ":")) + "\n")
+    wslib.info(f"fase própria gerada: {wslib.rel(out)} ({len(lvl['chunks'])} chunks, "
+               f"{len(lvl['collision_index'])} blocos, {len(lvl['objects'])} objetos)")
 
 
 if __name__ == "__main__":

@@ -70,7 +70,7 @@ func _title(s: int) -> void:
 		y += 11 * s
 	PixelFont.draw(self, Vector2(8 * s, (main.view_h / s - 12) * s), "PERFIL: " + Settings.profile.to_upper() + "   " + PlatformInfo.name().to_upper(), Color(0.6, 0.7, 0.9), s)
 	if not main.catalog.has_originals():
-		_center_text("BUILD PUBLICO: SO AS LAB ZONES", (main.view_h / s - 34) * s, Color(0.8, 0.8, 0.5), s)
+		_center_text("BUILD PUBLICO: SO A LAB ZONE", (main.view_h / s - 34) * s, Color(0.8, 0.8, 0.5), s)
 		_center_text("ZONAS ORIGINAIS: MAKE BUILD-PRIVATE-<ALVO>", (main.view_h / s - 24) * s, Color(0.8, 0.8, 0.5), s)
 
 
@@ -125,7 +125,7 @@ func _hud(s: int) -> void:
 			"X %04X.%04X Y %04X.%04X" % [p.x, p.xs, p.y, p.ys],
 			"VX %d VY %d GS %d" % [p.xv, p.yv, p.gs],
 			"ANG %02X ST %02X AN %02X RT %d" % [p.angle, p.status, p.anim, p.routine],
-			"CAM %d %d F %d FPS %d" % [sim.camera.x, sim.camera.y, sim.frame, Engine.get_frames_per_second()],
+			"CAM %d %d F %d" % [sim.camera.x, sim.camera.y, sim.frame],
 		]
 		for i in range(lines.size()):
 			PixelFont.draw(self, Vector2(main.view_w - PixelFont.width(lines[i], s) - 4 * s, (8 + i * 9) * s), lines[i], Color(0.7, 1, 0.7), s)

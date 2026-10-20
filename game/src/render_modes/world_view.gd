@@ -1,8 +1,8 @@
 class_name WorldView
 extends Node2D
 ## Desenha o estado da simulação. Somente leitura: nunca altera a simulação.
-## Perfis: "fidelity" (320x224, escala inteira) e "enhanced" (640x448, a mesma arte original
-## em 2x nítido quando a fase tem VRAM; senão arte própria). O fundo deformado vai à GPU.
+## Perfis: "fidelity" (320x224, escala inteira, arte privada se disponível) e
+## "enhanced" (640x448, arte própria suavizada, parallax e efeitos opcionais).
 
 var sim: GameSim
 var profile: String = "enhanced"
@@ -16,87 +16,26 @@ var black_out: bool = false
 var geo_art: GeometryArt
 var tick_count: int = 0
 var view_size: Vector2 = Vector2(320, 224)
-var _bg: BgLayer
-var _backdrop: BgLayer.BackdropDraw
 
 
 func configure(s: GameSim, prof: String) -> void:
-	var keep := sim == s and vram_art != null and vram_art.warm_done
 	sim = s
 	profile = prof
 	art_scale = 2 if prof == "enhanced" else 1
 	scale = Vector2(art_scale, art_scale)
-	if keep:
-		queue_redraw()
-		return
-	_drop_layers()
 	vram_art = null
 	rom_sprites = null
 	rom_hud = null
 	geo_art = GeometryArt.new(s.level, art_scale)
-	if s.level.is_private and s.level.vram.size() >= 0x10000 and s.level.cram.size() >= 64:
+	if prof == "fidelity" and s.level.is_private and s.level.vram.size() >= 0x10000 and s.level.cram.size() >= 64:
 		vram_art = VramArt.new(s.level)
-		vram_art.queue_warm()
 		if s.level.rom.size() == 0x80000:
-			rom_sprites = RomSprites.new(s.level.rom, s.level.vram, s.level.cram, vram_art.atlases)
+			rom_sprites = RomSprites.new(s.level.rom, s.level.vram, s.level.cram)
 			rom_hud = RomHud.new(s.level.rom, s.level.vram, s.level.cram)
-		_backdrop = BgLayer.BackdropDraw.new()
-		_backdrop.fill = vram_art.backdrop_color()
-		_backdrop.show_behind_parent = true
-		_backdrop.z_index = -2
-		_backdrop.visible = false
-		add_child(_backdrop)
-	elif s.level.sprite_rom.size() == 0x80000 and s.level.sprite_vram.size() >= 0x10000:
-		rom_sprites = RomSprites.new(s.level.sprite_rom, s.level.sprite_vram, s.level.sprite_cram)
 	queue_redraw()
 
 
-func art_ready() -> bool:
-	return vram_art == null or vram_art.warm_done
-
-
-func _drop_layers() -> void:
-	if _bg != null and is_instance_valid(_bg):
-		_bg.visible = false
-		_bg.queue_free()
-	if _backdrop != null and is_instance_valid(_backdrop):
-		_backdrop.visible = false
-		_backdrop.queue_free()
-	_bg = null
-	_backdrop = null
-
-
-func _attach_bg() -> void:
-	if vram_art == null or vram_art.bg_atlas == null or vram_art.layout_tex == null:
-		return
-	if _bg != null and is_instance_valid(_bg):
-		return
-	_bg = BgLayer.new()
-	_bg.view = self
-	_bg.show_behind_parent = true
-	_bg.z_index = -1
-	_bg.visible = false
-	_bg.setup(vram_art.bg_atlas, vram_art.layout_tex, vram_art.atlas_cols)
-	add_child(_bg)
-
-
-func _sync_layers() -> void:
-	var on := vram_art != null and not black_out
-	if _backdrop != null and is_instance_valid(_backdrop):
-		_backdrop.visible = on
-	if _bg != null and is_instance_valid(_bg):
-		_bg.visible = on and vram_art.bg_ready
-
-
 func _process(_d: float) -> void:
-	if vram_art != null and not vram_art.warm_done:
-		var before := vram_art.bg_ready
-		vram_art.warm(4)
-		if vram_art.bg_ready and not before:
-			_attach_bg()
-	elif vram_art != null and vram_art.bg_ready and _bg == null:
-		_attach_bg()
-	_sync_layers()
 	queue_redraw()
 
 
@@ -123,9 +62,7 @@ func _draw() -> void:
 			SpritePainter.draw_object(self, o, tick_count)
 	if profile == "enhanced" and sim.shield:
 		draw_arc(Vector2(sim.player.x, sim.player.y), 20.0, 0, TAU, 32, Color(0.5, 0.8, 1, 0.7), 2.0)
-	if rom_sprites != null:
-		_draw_rom_player()
-	else:
+	if not _draw_rom_player():
 		SpritePainter.draw_player(self, sim.player, profile == "enhanced", tick_count)
 	if sim.invincible:
 		for i in range(4):
@@ -147,8 +84,6 @@ func _draw() -> void:
 
 
 func _draw_background(cx: float, cy: float) -> void:
-	if vram_art != null and _backdrop != null and _backdrop.visible:
-		return
 	if vram_art != null:
 		draw_rect(Rect2(Vector2.ZERO, view_size), vram_art.backdrop_color())
 		_draw_bg_lines()
@@ -176,14 +111,6 @@ func _draw_background(cx: float, cy: float) -> void:
 			x += step
 		pts.append(Vector2(view_size.x, view_size.y))
 		draw_colored_polygon(pts, hill.lightened(0.15 * (1 - layer)))
-	if profile == "enhanced" or geo_art.level.theme == "lab":
-		for k in range(6):
-			var bx := fposmod(float(k) * 92.0 - cx * 0.08, view_size.x + 48.0) - 24.0
-			var bw := 26.0 + float(k % 2) * 10.0
-			var bh := 16.0 + float(k % 3) * 12.0
-			draw_rect(Rect2(bx, 28.0, bw, bh), th["plat"].darkened(0.25))
-			draw_rect(Rect2(bx + 4.0, 32.0, 6.0, 5.0), th["top"])
-			draw_rect(Rect2(bx + 14.0, 32.0, 6.0, 5.0), th["top2"])
 	if profile == "enhanced":
 		for k in range(5):
 			var cxp := fposmod(float(k) * 97.0 - cx * 0.05, view_size.x + 60.0) - 30.0

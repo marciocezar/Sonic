@@ -38,7 +38,7 @@ Escopo: NÃO usar emuladores Android/Simuladores iOS sem autorização (pedido d
 
 ## 2026-10-18 (Web)
 - Seletor de ROM Web = painel HTML (`WEB_ROM_PICKER_JS` em main.gd) por causa do Safari.
-- Azure privada (19 fases): `make package-web-azure` → `dist-private/web-azure.zip` (index.html na raiz) e `make web-azure-check URL=`. App Service Windows. Não zipar a pasta no Finder.
+- Azure: `make package-web-azure` (zip com index.html na raiz) e `make web-azure-check URL=`.
 - Pendente: confirmação do usuário no Safari e na Azure (registrar com `make qa-record`).
 
 ## 2026-10-18 (jogo completo — F0 arte/fundo)
@@ -68,22 +68,3 @@ Escopo: NÃO usar emuladores Android/Simuladores iOS sem autorização (pedido d
   composição de peças com prioridade do hardware (1ª peça por cima); deslocamentos de mapeamento com sinal.
 - VRAM: card_vram (cartão, PLC16) x game_vram (+PLC 2 e animais 0x15+zona).
 - PRÓXIMO: tela SEGA/título/seleção, game over/continue, cápsula 0x3E, chefe GHZ, objetos MZ..SBZ, estágio especial, som.
-
-## 2026-10-19 (Web com as fases do Mac)
-- Fundo com deformação por linha saiu do laço de faixas (`_draw_bg_lines`) e foi para `bg_deform.gdshader` + `bg_layer.gd`
-  (um retângulo). Os chunks do ato são montados aos poucos durante o cartão (`VramArt.warm`). Sprites de objeto usam
-  `blend_rect` no atlas quando ele existe.
-- Perfil enhanced, se a fase tem VRAM, desenha a arte original em 2× com filtro nearest (a arte própria fica só na Lab Zone).
-- `make build-private-web` regenerado. Smoke headless: 19 atos × 2 perfis, exit 0. Navegador: seletor e GHZ jogável.
-- Servir: `make web-serve` (as 19 fases). `PUBLIC=1` serve a Web só com Lab Zone. A publicação com as 19 fases é `dist-private/web-azure.zip`, só em site privado.
-
-## 2026-10-19 (builds iguais e Lab Zone)
-- Os alvos `build-web/macos/windows/android/ios` chamam a exportação privada. `web-serve` abre `dist-private/web` por padrão.
-- Lab Zone: terreno próprio. O sprite da ROM usava os quadros da animação própria (não batem no mapeamento), então o personagem original quebrava e, no quadro que falhava, aparecia o personagem antigo. Agora a animação também vem da ROM, e anéis/monitores usam o mesmo atlas. Sem ROM, a arte própria continua.
-- `make demo-level` gera `lab1.json` e `lab2.json`. Para acrescentar vilão, mola ou TV na Lab Zone 2, edite `_lab2_objects` em `tooling/gen_demo_level.py` (x, folga acima do chão, id, subtipo) e rode o alvo de novo. O JSON à mão é regravado.
-
-## 2026-10-20 (GitHub)
-- O primeiro commit local tinha ~4 GiB (ROM, `work/`, `private/`, `dist/`, `dist-private/`, `tooling/godot/`, `tooling/ghidra/`, `node_modules/`). O GitHub recusa pacote acima de 2 GiB. `.gitignore` cobre isso; esses caminhos ficam só na máquina. Reinstalar ferramentas: `make bootstrap`.
-
-## 2026-10-19 (Azure privada)
-- `make package-web-azure` empacota `dist-private/web` em `dist-private/web-azure.zip`, com os arquivos na raiz do zip (fora de `dist/`, então `check-no-rom-in-dist` não vê a ROM). `web.config` só adiciona MIME `.wasm` e `.pck` (um `<remove>` de extensão ausente derruba o IIS com a mensagem de permissão).

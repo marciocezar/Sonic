@@ -12,16 +12,14 @@ const SONIC_GFX := 0x780
 var rom: PackedByteArray
 var vram: PackedByteArray
 var cram: PackedInt32Array
-var atlases: Array = []  # mesmas imagens da VramArt (paleta×espelhamento); vazio = pinta pixel a pixel
 var _cache: Dictionary = {}
 var _palettes: Array = []
 
 
-func _init(r: PackedByteArray, level_vram: PackedByteArray, level_cram: PackedInt32Array, shared_atlases: Array = []) -> void:
+func _init(r: PackedByteArray, level_vram: PackedByteArray, level_cram: PackedInt32Array) -> void:
 	rom = r
 	vram = level_vram
 	cram = level_cram
-	atlases = shared_atlases
 	for line in range(4):
 		var pal: Array = []
 		for i in range(16):
@@ -122,9 +120,6 @@ func frame_texture(map_addr: int, frame: int, gfx: int, sonic: bool = false, sin
 				var dy: int = (h - 1 - cy) if vf else cy
 				var ox: int = int(pc[0]) - x0 + dx * 8
 				var oy: int = int(pc[1]) - y0 + dy * 8
-				if not sonic and not atlases.is_empty():
-					_blit_atlas(img, t, (tw >> 13) & 3, hf, vf, Vector2i(ox, oy))
-					continue
 				for row in range(8):
 					for col in range(8):
 						var byte: int = src[off + row * 4 + (col >> 1)]
@@ -137,20 +132,6 @@ func frame_texture(map_addr: int, frame: int, gfx: int, sonic: bool = false, sin
 	var res := [ImageTexture.create_from_image(img), Vector2(x0, y0)]
 	_cache[key] = res
 	return res
-
-
-func _blit_atlas(dst: Image, tile: int, pal: int, hf: bool, vf: bool, at: Vector2i) -> void:
-	if tile < 0 or tile >= 2048 or pal < 0 or pal > 3:
-		return
-	var flip := (1 if hf else 0) | ((1 if vf else 0) << 1)
-	var src: Image = atlases[pal * 4 + flip]
-	var c := tile % 64
-	var r := int(tile / 64) % 32
-	if flip & 1:
-		c = 63 - c
-	if flip & 2:
-		r = 31 - r
-	dst.blend_rect(src, Rect2i(c * 8, r * 8, 8, 8), at)
 
 
 ## Desenha o quadro na posição de mundo `pos` (espelhamentos como no hardware: bit0 X, bit1 Y).

@@ -6,7 +6,7 @@ extends RefCounted
 ## Ordem de progressão medida (tabela em ROM 0xC6F4, evidência EV-TAB-0005).
 const ORIGINAL_ORDER := ["ghz1", "ghz2", "ghz3", "mz1", "mz2", "mz3", "syz1", "syz2", "syz3",
 		"lz1", "lz2", "lz3", "slz1", "slz2", "slz3", "sbz1", "sbz2", "sbz3", "fz"]
-const BUILTIN := ["lab1", "lab2"]
+const BUILTIN := ["lab1"]
 
 var packs_dir: String = ""
 var entries: Array = []  # [{id, title, source}]
@@ -18,9 +18,8 @@ var importer := RomImporter.new()
 func scan(dir: String) -> void:
 	packs_dir = dir
 	entries.clear()
-	var own := {"lab1": "LAB ZONE (PROPRIA)", "lab2": "LAB ZONE 2"}
 	for b in BUILTIN:
-		entries.append({"id": b, "title": own.get(b, b), "source": "builtin"})
+		entries.append({"id": b, "title": "LAB ZONE (PROPRIA)", "source": "builtin"})
 	var have_packs := dir != "" and DirAccess.dir_exists_absolute(dir)
 	for lid in ORIGINAL_ORDER:
 		if have_packs and FileAccess.file_exists(dir.path_join(lid).path_join("level.json")):

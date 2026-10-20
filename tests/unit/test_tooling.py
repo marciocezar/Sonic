@@ -104,13 +104,12 @@ class TestGeneratedTables(unittest.TestCase):
 
 class TestDemoLevel(unittest.TestCase):
     def test_lab_level_has_no_rom_marker(self):
+        p = ROOT / "game/data/levels/lab1.json"
+        txt = p.read_text()
+        self.assertIn('"license"', txt)
         rom = wslib.find_rom()
-        digest = wslib.sha256_file(rom) if rom else ""
-        for name in ("lab1.json", "lab2.json"):
-            txt = (ROOT / "game/data/levels" / name).read_text()
-            self.assertIn('"license"', txt)
-            if digest:
-                self.assertNotIn(digest, txt)
+        if rom:
+            self.assertNotIn(wslib.sha256_file(rom), txt)
 
 
 if __name__ == "__main__":

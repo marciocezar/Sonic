@@ -11,7 +11,6 @@ import wslib  # noqa: E402
 ALLOWED = {
     "game/icon.svg": "próprio (desenhado em SVG para o projeto)",
     "game/data/levels/lab1.json": "próprio (gerado por tooling/gen_demo_level.py)",
-    "game/data/levels/lab2.json": "próprio (gerado por tooling/gen_demo_level.py)",
 }
 BINARY_EXT = {".png", ".jpg", ".wav", ".ogg", ".mp3", ".ttf", ".otf", ".bin", ".vgm", ".tres", ".res"}
 

@@ -44,7 +44,7 @@
   },
   "web": {
     "status": "BUILT_NOT_TESTED",
-    "timestamp": "2026-10-19T13:41:53+00:00",
+    "timestamp": "2026-10-19T13:24:02+00:00",
     "command": "make build-web",
     "notes": "exportado; teste em dispositivo/host pendente",
     "host": {
@@ -71,13 +71,13 @@
       },
       {
         "path": "dist/web/index.embed.js",
-        "size": 53131576,
-        "sha256": "77dcabed63414d13a645b4a3be18dae50e9e30b445a1c89f32b2db18d1d22b18"
+        "size": 53117688,
+        "sha256": "2e3be3b4d051421d008b595eed2b2946a4a4da3fa1f64bf75ed0d81b9823425e"
       },
       {
         "path": "dist/web/index.html",
         "size": 6897,
-        "sha256": "64131bd96dacfe47e79dc285fe3f888b5b91b6921d5dccb56cd8efe71c3150ec"
+        "sha256": "74baa201620435cc22568a5c1a4ebf3b432b97275b27fcd7af5539170adc29f2"
       },
       {
         "path": "dist/web/index.icon.png",
@@ -91,8 +91,8 @@
       },
       {
         "path": "dist/web/index.pck",
-        "size": 323564,
-        "sha256": "4d62bba7d089fff9f51f6507956379f04fc0fa02b682fba8cddfc8247c3aa524"
+        "size": 313148,
+        "sha256": "03d28706ac5d10df5de7e5f84549e5d47ceceb7e488697474766f38211321475"
       },
       {
         "path": "dist/web/index.png",
@@ -118,7 +118,7 @@
   },
   "android": {
     "status": "BLOCKED",
-    "timestamp": "2026-10-19T13:36:38+00:00",
+    "timestamp": "2026-10-19T01:52:36+00:00",
     "command": "",
     "notes": "ANDROID_HOME/ANDROID_SDK_ROOT não definido ou inválido (ver .env.example)",
     "host": {
@@ -220,7 +220,7 @@
   },
   "web-private": {
     "status": "BUILT_NOT_TESTED",
-    "timestamp": "2026-10-19T15:51:16+00:00",
+    "timestamp": "2026-10-19T02:58:24+00:00",
     "command": "make build-private-web",
     "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
     "host": {
@@ -247,13 +247,13 @@
       },
       {
         "path": "dist-private/web/index.embed.js",
-        "size": 53900172,
-        "sha256": "540944232a1b7aa8d93f715ee9fb79309f79666a0add4645869931eb6e119b89"
+        "size": 53816824,
+        "sha256": "270c004b3f3ee272bf33c90ef8a11669b916e79410e23f54009a05d3d7fa993c"
       },
       {
         "path": "dist-private/web/index.html",
         "size": 6897,
-        "sha256": "94fd69c4376170be1f00db36fecd78bec96f72078955d7d3d1fd2831c348efbc"
+        "sha256": "feaed6cb8d70b20c97317fb4325ddf714374f3c02efe1b80718353af603a7c26"
       },
       {
         "path": "dist-private/web/index.icon.png",
@@ -267,8 +267,8 @@
       },
       {
         "path": "dist-private/web/index.pck",
-        "size": 900012,
-        "sha256": "e979cf8bfd37607b24aaeebc7ade6a2be0a5784cf427d1014c93b7ab4a703f0d"
+        "size": 837500,
+        "sha256": "42d4ddde5a2bdbca28f71644c734da6409a7205db121c1b6cca2eb0153973058"
       },
       {
         "path": "dist-private/web/index.png",
@@ -287,14 +287,14 @@
       },
       {
         "path": "dist-private/web/web.config",
-        "size": 890,
-        "sha256": "3c55b30a91af776529137ebf658489c80524a37097989e1ee5bd034c4a0d5e24"
+        "size": 1035,
+        "sha256": "bda8044de3d2b6da599996383d5aa24d73f9784bbc8e8040f446e244c4f53d3a"
       }
     ]
   },
   "macos-private": {
     "status": "BUILT_NOT_TESTED",
-    "timestamp": "2026-10-19T13:36:31+00:00",
+    "timestamp": "2026-10-19T02:58:16+00:00",
     "command": "make build-private-macos",
     "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
     "host": {
@@ -306,14 +306,14 @@
     "artifacts": [
       {
         "path": "dist-private/macos/MegadrivePlatformerLab.zip",
-        "size": 61342303,
-        "sha256": "0379727fa43e3b815391b0ce2c5466afc587559ff5d68df87b56cac2529b9ec2"
+        "size": 61334775,
+        "sha256": "b8a728f166eae7229e5172516035f39f7c2b49e65dcb762d67acac406074a36d"
       }
     ]
   },
   "windows-private": {
     "status": "BUILT_NOT_TESTED",
-    "timestamp": "2026-10-19T13:36:34+00:00",
+    "timestamp": "2026-10-19T02:58:20+00:00",
     "command": "make build-private-windows",
     "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
     "host": {
@@ -330,8 +330,8 @@
       },
       {
         "path": "dist-private/windows/MegadrivePlatformerLab.pck",
-        "size": 847916,
-        "sha256": "703e5785e80ca8682a507327b85028dccb19513a54507ee6b816ec584e767ede"
+        "size": 837500,
+        "sha256": "42d4ddde5a2bdbca28f71644c734da6409a7205db121c1b6cca2eb0153973058"
       }
     ]
   },
@@ -356,7 +356,7 @@
   },
   "ios-private": {
     "status": "BUILT_NOT_TESTED",
-    "timestamp": "2026-10-19T14:37:35+00:00",
+    "timestamp": "2026-10-19T02:58:40+00:00",
     "command": "make build-private-ios",
     "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
     "host": {
@@ -373,8 +373,8 @@
       },
       {
         "path": "dist-private/ios/MegadrivePlatformerLab.pck",
-        "size": 848508,
-        "sha256": "126d5472dae0203585594fe3ad1454422c5bc78206792626dbb8c399e4b5ad6a"
+        "size": 837548,
+        "sha256": "779e7df192cadad5312167ed3c17bbd7835ce7cb3883dc503c82fb8725167fdf"
       }
     ]
   }

@@ -22,7 +22,7 @@ nas seis modalidades. Status honestos (ver `CLAUDE.md`); nada aqui é "idêntico
 | F4 | Chefes | GHZ, MZ, SYZ, LZ, SLZ, SBZ/FZ + cápsula | NOT_STARTED |
 | F5 | Estágio especial | labirinto giratório, esmeraldas, resultados | NOT_STARTED |
 | F6 | Som | driver de música/efeitos (68000), síntese YM2612 + PSG + DAC em GDScript | NOT_STARTED |
-| F7 | Plataformas | roteiro automático "todas as fases" por plataforma; Azure privada com login obrigatório. Web privada (2026-10-19): 19 atos carregam; GHZ jogável no navegador com a mesma arte do Mac | IN_PROGRESS |
+| F7 | Plataformas | roteiro automático "todas as fases" por plataforma; Azure privada com login obrigatório | IN_PROGRESS |
 
 ## Validação planejada por fase
 - Assets: comparação byte a byte com VRAM/CRAM capturadas por emulação (`private/extracted/levelpacks/*/vram.bin`).

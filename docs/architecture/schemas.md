@@ -5,8 +5,6 @@
 chunks[n][256] (palavras de bloco), blocks[n][4] (palavras de tile), collision_index[], loop_chunks[2],
 roll_chunks[2], water_level|null, objects[{x,y,yraw,id,sub}], cram[64]?, vdp_regs[24]?, theme?`.
 Fases próprias incluem `collision{heights[4096], widths[4096], angles[256]}` e `license`.
-As embutidas são `lab1` e `lab2` (`make demo-level` → `game/data/levels/`). Objetos da Lab Zone 2 ficam em
-`tooling/gen_demo_level.py` (`_lab2_objects`).
 Levelpacks privados carregam `source_sha256` (SHA da ROM) — usado por `check-no-rom-in-dist`.
 
 ## Replay (tests/parity/replays/*.json)

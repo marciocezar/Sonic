@@ -10,7 +10,6 @@ O código é novo; não copia código descompilado. Comportamentos foram especif
 |---|---|
 | `game/icon.svg` | desenhado para o projeto |
 | `game/data/levels/lab1.json` (Lab Zone) | gerado por `tooling/gen_demo_level.py` (perfil matemático próprio) |
-| `game/data/levels/lab2.json` (Lab Zone 2) | gerado por `tooling/gen_demo_level.py` (mesmo formato; anéis, TVs, molas, vilões) |
 | Arte Enhanced/Fidelity sem pacote privado | gerada em código (`geometry_art.gd`, `sprite_painter.gd`, `pixel_font.gd`) |
 | Efeitos sonoros | sintetizados em código (`audio_bus.gd`) |
 

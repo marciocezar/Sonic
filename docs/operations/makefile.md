@@ -12,7 +12,7 @@ Fonte da verdade: `make help`. Todos os alvos chamam `tooling/*.py` com `python3
 | rea-analyze | rom-analyze + tentativas REA + Ghidra | reports/analysis/rea-analyze.json |
 | extract-data | fases via interpretador (privado) + validação VDP | private/extracted, reports/analysis/extract-summary.json |
 | reference-traces | traces por quadro dos replays (`REPLAY=`) | private/reference-captures, reports/parity/reference-index.json |
-| demo-level | fases próprias Lab Zone e Lab Zone 2 | game/data/levels/lab1.json, lab2.json |
+| demo-level | fase própria Lab Zone | game/data/levels/lab1.json |
 | reverse-report | compila evidências | reports/analysis/reverse-report.md |
 | assets-check | inventário/proveniência de assets | reports/qa/assets.json |
 | test / test-unit / test-parity / test-touch | testes | reports/qa, reports/parity |

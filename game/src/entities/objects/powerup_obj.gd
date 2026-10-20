@@ -1,11 +1,7 @@
 class_name PowerUpObj
 extends GameObject
 ## Conteúdo do monitor: sobe (vy -0x300, desacelera 0x18/quadro); ao parar, aplica o efeito
-## e permanece visível por 29 quadros. O sprite é só o ícone (ROM 0xA31A): o mapeamento aponta
-## para a primeira peça do quadro (anim+2) de Map_Monitor, com o bit de peça única.
-
-
-const MAP_MONITOR := 0xA58A
+## e permanece visível por 30 quadros.
 
 
 func _init() -> void:
@@ -18,17 +14,8 @@ func init() -> bool:
 	act_width = 8
 	priority = 3
 	yv = -0x300
-	frame = (anim + 2) & 0xFF
+	frame = anim + 2
 	routine = 2
-	gfx = 0x680
-	render = 0x24
-	var rom: PackedByteArray = sim.level.rom
-	if rom.size() != 0x80000:
-		rom = sim.level.sprite_rom
-	if rom.size() == 0x80000:
-		var off := MAP_MONITOR + frame * 2
-		var rel := Fx.s16((rom[off] << 8) | rom[off + 1])
-		map_addr = MAP_MONITOR + rel + 1
 	return true
 
 

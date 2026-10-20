@@ -273,9 +273,7 @@ def _write_web_embed(d: Path = None) -> None:
 
 
 WEB_CONFIG = """<?xml version="1.0" encoding="utf-8"?>
-<!-- Azure App Service (Windows/IIS). Gerado por make build-web / make package-web-azure.
-     Não usar <remove> em .wasm/.pck: se a extensão não existe no mapa pai, o IIS recusa
-     o web.config (500.19) e o site mostra a mensagem genérica de permissão. -->
+<!-- Azure App Service (Windows/IIS): documento padrão e tipos MIME do export Web do Godot. Gerado por make build-web. -->
 <configuration>
   <system.webServer>
     <defaultDocument enabled="true">
@@ -286,8 +284,14 @@ WEB_CONFIG = """<?xml version="1.0" encoding="utf-8"?>
     </defaultDocument>
     <directoryBrowse enabled="false" />
     <staticContent>
+      <remove fileExtension=".wasm" />
       <mimeMap fileExtension=".wasm" mimeType="application/wasm" />
+      <remove fileExtension=".pck" />
       <mimeMap fileExtension=".pck" mimeType="application/octet-stream" />
+      <remove fileExtension=".js" />
+      <mimeMap fileExtension=".js" mimeType="text/javascript" />
+      <remove fileExtension=".json" />
+      <mimeMap fileExtension=".json" mimeType="application/json" />
     </staticContent>
     <security>
       <requestFiltering>
@@ -346,22 +350,14 @@ def _produced(target: str, out: Path = None) -> list:
 
 # --- Web ---------------------------------------------------------------------------------------
 
-def web_bundle() -> Path:
-    """Pasta da Web jogável (19 fases). dist/web é só a Lab Zone, sem a ROM."""
-    priv = wslib.safe_path("dist-private/web")
-    if (priv / "index.html").is_file():
-        return priv
-    return wslib.safe_path("dist/web")
-
-
 def web_mobile_check() -> int:
-    d = web_bundle()
+    d = wslib.safe_path("dist/web")
     report = {"timestamp": wslib.now_iso(), "checks": []}
     def chk(name, ok, detail=""):
         report["checks"].append({"check": name, "ok": bool(ok), "detail": detail})
         print(f"{'OK ' if ok else 'NOK'} {name} {detail}")
     if not (d / "index.html").is_file():
-        print(f"{d} ausente: execute make build-web")
+        print("dist/web ausente: execute make build-web")
         return 2
     html = (d / "index.html").read_text(errors="replace")
     files = {p.name: p for p in d.iterdir()}
@@ -415,9 +411,9 @@ class _Srv:
 
 
 def test_web() -> int:
-    d = web_bundle()
+    d = wslib.safe_path("dist/web")
     if not (d / "index.html").is_file():
-        print(f"{d} ausente: execute make build-web")
+        print("dist/web ausente: execute make build-web")
         set_status("web-desktop", "BLOCKED", "build web ausente")
         return 2
     port = 8761
@@ -579,9 +575,7 @@ def test_ios() -> int:
 # --- macOS ------------------------------------------------------------------------------------------
 
 def test_macos() -> int:
-    z = _private_out("macos")
-    if not z.is_file():
-        z = wslib.safe_path(OUTPUTS["macos"])
+    z = wslib.safe_path(OUTPUTS["macos"])
     if not z.is_file():
         print("zip macOS ausente: make build-macos")
         return 2
@@ -613,7 +607,7 @@ def test_macos() -> int:
 def build_supported() -> int:
     results = {}
     for t in ["macos", "windows", "web", "android", "ios"]:
-        rc = export_private(t)
+        rc = export(t)
         results[t] = rc
     blocked = [t for t, rc in results.items() if rc == 2]
     failed = [t for t, rc in results.items() if rc == 1]
@@ -645,30 +639,27 @@ def build_all() -> int:
 
 
 def package_web_azure() -> int:
-    """dist-private/web-azure.zip: arquivos de dist-private/web com index.html NA RAIZ do zip.
+    """dist/web-azure.zip: conteúdo de dist/web com index.html NA RAIZ do zip (pronto para wwwroot / zip deploy).
 
-    O zip fica fora de dist/ (check-no-rom-in-dist não varre dist-private/). Contém as 19 fases:
-    publicar só num site privado (autenticação ou restrição por IP). index.embed.js fica de fora.
-    O erro do IIS "You do not have permission..." aparece se o zip aninha uma pasta (web/index.html)
-    ou se o web.config faz <remove> de um MIME que o IIS ainda não tem.
+    O erro do IIS "You do not have permission to view this directory or page." aparece quando o index.html não está
+    na raiz do site (ex.: pasta web/ dentro de wwwroot). index.embed.js (só para file://) fica de fora.
     """
     import zipfile
-    d = wslib.safe_path("dist-private/web")
+    d = wslib.safe_path("dist/web")
     if not (d / "index.html").is_file():
-        print("FAIL: dist-private/web/index.html ausente (rode make build-web)")
+        print("FAIL: dist/web/index.html ausente (rode make build-web)")
         return 1
-    _write_web_hosting_configs(d)
-    out = wslib.safe_path("dist-private/web-azure.zip")
+    _write_web_hosting_configs()
+    out = wslib.safe_path("dist/web-azure.zip")
     names = []
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         for f in sorted(d.iterdir()):
-            if not f.is_file() or f.is_symlink() or f.name == "index.embed.js":
-                continue
-            if f.suffix.lower() in (".md", ".bin", ".gen", ".smd"):
-                print(f"FAIL: arquivo solto suspeito em dist-private/web: {f.name}")
-                return 1
-            z.write(f, f.name)
-            names.append(f.name)
+            if f.is_file() and not f.is_symlink() and f.name != "index.embed.js":
+                if f.suffix.lower() in (".md", ".bin", ".gen", ".smd"):
+                    print(f"FAIL: arquivo suspeito de ROM em dist/web: {f.name}")
+                    return 1
+                z.write(f, f.name)
+                names.append(f.name)
     required = ["index.html", "index.js", "index.wasm", "index.pck", "web.config"]
     missing = [n for n in required if n not in names]
     if missing:
@@ -676,11 +667,7 @@ def package_web_azure() -> int:
         return 1
     print(f"OK: {wslib.rel(out)} ({out.stat().st_size / 1e6:.1f} MB) sha256={wslib.sha256_file(out)}")
     print("    raiz do zip: " + ", ".join(names))
-    print("    uso pessoal: site privado (Entra ID / restrição por IP). Não publicar em aberto.")
-    print("    publicar: az webapp deploy --resource-group <grupo> --name <app> "
-          "--src-path dist-private/web-azure.zip --type zip")
-    print("    App Service Windows. No Linux o web.config é ignorado;")
-    print("    use: pm2 serve /home/site/wwwroot --no-daemon")
+    print("    publicar: az webapp deploy --resource-group <grupo> --name <app> --src-path dist/web-azure.zip --type zip")
     return 0
 
 
@@ -711,7 +698,7 @@ def web_azure_check(url: str) -> int:
     print(f"/index.html  -> {idx[0]} {idx[1]}")
     if idx[0] != 200:
         ok = False
-        print("  ! index.html não está na raiz do site: publique dist-private/web-azure.zip (make package-web-azure)")
+        print("  ! index.html não está na raiz do site: publique o CONTEÚDO de dist/web (make package-web-azure)")
     elif root[0] != 200:
         ok = False
         print("  ! raiz sem documento padrão: falta web.config (Windows) ou o site é Linux (ver docs/platforms/web-desktop.md)")

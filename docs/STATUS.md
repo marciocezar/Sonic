@@ -1,6 +1,6 @@
 # STATUS — sonic-megadrive (auditável)
 
-Atualizado: 2026-10-20. Fonte única: `Sonic The Hedgehog (USA, Europe).md` (REV00, SHA-256 `46160baa…f2a6`).
+Atualizado: 2026-10-18. Fonte única: `Sonic The Hedgehog (USA, Europe).md` (REV00, SHA-256 `46160baa…f2a6`).
 Detalhes gerados: `docs/qa/build-matrix.md`, `docs/qa/matriz-mecanicas.md`, `reports/parity/summary.md`,
 `reports/analysis/reverse-report.md`.
 
@@ -16,8 +16,7 @@ Detalhes gerados: `docs/qa/build-matrix.md`, `docs/qa/matriz-mecanicas.md`, `rep
 - Extraídas (privado) e validadas as geometrias das 19 fases. Objetos: 19 tipos da lista implementados de 79 presentes (+5 auxiliares gerados em execução)
   (≈48% das instâncias, ver `docs/qa/matriz-mecanicas.md`).
 - **Builds privados** (`make build-private-<alvo>`, `dist-private/`): conteúdo do jogo embutido, perfil Fidelity padrão, 19 atos em
-  sequência com arte, sprites e fundos originais lidos da ROM (macOS e Web: os 19 atos carregam; Web no navegador: menu com as
-  fases e GHZ jogável com a mesma arte). Fundo deformado desenhado na GPU. Perfil Enhanced, com arte da ROM, é a mesma arte em 2× nítido.
+  sequência com arte, sprites e fundos originais lidos da ROM (macOS privado: progressão PASS; Web privado: abre GHZ com visual original).
   Builds públicos (`dist/`) só com LAB ZONE; opção "carregar ROM" removida.
   Chefes/estágios especiais ainda provisórios (ato de chefe avança ao fim da área).
 - App jogável (título, opções, pausa, HUD, toque, remapeamento, Fidelity/Enhanced) e exportado para os 5 destinos.
@@ -61,21 +60,6 @@ Ledger: `docs/reverse-engineering/04-evidence-ledger.csv` (ROM, tabelas, RAM, fa
 3. Sprites/animações Fidelity a partir de mapeamentos (privado); deformação de fundo.
 4. Estágios especiais e final. 5. Testes em aparelhos reais.
 
-## Atualização 2026-10-19 (Web com as mesmas fases do Mac)
-- `make build-web` e `make web-serve` usam `dist-private/web` (19 fases). `make web-serve PUBLIC=1` serve `dist/web` (só Lab Zone).
-- Carga headless dos 19 atos (fidelity e enhanced, `--quit-after=8`): exit 0, sem erro de script.
-- Capturas com GPU: GHZ, Marble, Scrap Brain e Labyrinth com arte original; Enhanced em 2× com a mesma arte.
-- Navegador (Chromium embutido): título com JOGAR / SELECIONAR FASE (Green Hill até Star Light na primeira tela do seletor)
-  e GHZ em jogo, com cachoeira, nuvens e HUD originais, sem erro de shader no console. O ato inteiro de cada zona não foi
-  percorrido no navegador. FPS por `requestAnimationFrame` nesse painel não é medida confiável (aba limitada pelo Chromium).
-
-## Atualização 2026-10-19 (builds locais iguais; Lab Zone)
-- `make build-web`, `build-macos`, `build-windows`, `build-android` e `build-ios` passam a embutir as 19 fases em `dist-private/` (uso pessoal). `make web-serve` serve essa Web. `dist/web` segue sem a ROM (`make build-web-public`).
-- Lab Zone 2 (`lab2`): segunda fase própria, mesmo formato da Lab Zone. Menu "JOGAR LAB ZONE 2". Anéis, TVs (vida, tênis, escudo, invencível, anéis), molas, espinhos, Motobug, Crabmeat, Buzz Bomber, Chopper, Newtron e placa. Gerada por `make demo-level` (`tooling/gen_demo_level.py`, lista `_lab2_objects`). Não entra na sequência das 19 fases.
-- Conteúdo do monitor (vida, anéis, tênis, escudo, invencibilidade): o ícone que sobe usa só a primeira peça do quadro da ROM (0xA31A). Antes, o mesmo endereço virava um sprite quebrado. Conferido no monitor de 10 anéis de GHZ1.
-
-## Atualização 2026-10-20 (o que entra no Git)
-- `.gitignore` deixa de fora a ROM, `private/`, `work/`, `dist/`, `dist-private/`, `tooling/godot/`, `tooling/ghidra/` e `node_modules/`. O commit anterior (não aceito pelo GitHub) tinha ~4 GiB; o limite do pacote remoto é 2 GiB. Os arquivos continuam no disco.
-
 ## Pendente do usuário (Web)
-- Safari real: seletor de ROM em painel HTML (validado só no Chromium). Azure privada: `make package-web-azure` gera `dist-private/web-azure.zip` (index.html na raiz). Publicar com `az webapp deploy --type zip` num App Service Windows privado e rodar `make web-azure-check URL=...`. A implantação real ainda não foi verificada por nós.
+- Safari real: seletor de ROM em painel HTML (validado só no Chromium). Azure: publicar `dist/web-azure.zip` e rodar
+  `make web-azure-check URL=...`.

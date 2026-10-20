@@ -84,32 +84,13 @@ func _tile_rect(tile: int, flip: int) -> Rect2i:
 	return Rect2i(c * 8, r * 8, 8, 8)
 
 
-var warm_ids: Array = []
-var warm_i: int = 0
-var warm_done: bool = false
-var bg_count: int = 0
-var bg_ready: bool = false
-var bg_atlas: ImageTexture
-var layout_tex: ImageTexture
-var atlas_cols: int = 8
-var _atlas_img: Image
-var _slot_of: PackedByteArray = PackedByteArray()
-
-
-## Texturas (baixa/alta prioridade) de um chunk do plano FG ou BG. Cache por id (bit 7 de loop não muda a arte).
+## Texturas (baixa/alta prioridade) de um chunk do plano FG ou BG.
 func chunk_textures(cid: int) -> Array:
-	var id := cid & 0x7F
-	if chunk_cache.has(id):
-		return chunk_cache[id]
-	var imgs := _chunk_images(id)
-	var res := [ImageTexture.create_from_image(imgs[0]), ImageTexture.create_from_image(imgs[1])]
-	chunk_cache[id] = res
-	return res
-
-
-func _chunk_images(id: int) -> Array:
+	if chunk_cache.has(cid):
+		return chunk_cache[cid]
 	var low := Image.create(256, 256, false, Image.FORMAT_RGBA8)
 	var high := Image.create(256, 256, false, Image.FORMAT_RGBA8)
+	var id := cid & 0x7F
 	for by in range(16):
 		for bx in range(16):
 			var bw := 0
@@ -128,76 +109,11 @@ func _chunk_images(id: int) -> Array:
 					var dst: Image = high if tw & 0x8000 else low
 					var src: Image = atlases[pal * 4 + flip]
 					dst.blend_rect(src, _tile_rect(tw & 0x7FF, flip), Vector2i(bx * 16 + tx * 8, by * 16 + ty * 8))
-	return [low, high]
-
-
-## Prepara o atlas do fundo (deformação numa única passagem na GPU) e a fila dos chunks do ato.
-func queue_warm() -> void:
-	var seen := {}
-	var bg_ids: Array = []
-	var fg_ids: Array = []
-	for row in range(8):
-		for col in range(0x40):
-			var bid: int = level.layout_bg(col, row) & 0x7F
-			var fid: int = level.layout_fg(col, row) & 0x7F
-			if bid != 0 and not seen.has(bid):
-				seen[bid] = true
-				bg_ids.append(bid)
-			if fid != 0 and not seen.has(fid):
-				seen[fid] = true
-				fg_ids.append(fid)
-	_slot_of = PackedByteArray()
-	_slot_of.resize(128)
-	bg_count = bg_ids.size()
-	var rows: int = maxi(1, (bg_count + atlas_cols - 1) / atlas_cols)
-	_atlas_img = Image.create(atlas_cols * 256, rows * 256, false, Image.FORMAT_RGBA8)
-	for i in range(bg_count):
-		_slot_of[int(bg_ids[i])] = i + 1
-	var li := Image.create(64, 8, false, Image.FORMAT_RGBA8)
-	for row in range(8):
-		for col in range(0x40):
-			var id: int = level.layout_bg(col, row) & 0x7F
-			var slot: int = int(_slot_of[id]) if id > 0 and id < 128 else 0
-			li.set_pixel(col, row, Color8(slot, 0, 0, 255))
-	layout_tex = ImageTexture.create_from_image(li)
-	warm_ids = bg_ids + fg_ids
-	warm_i = 0
-	warm_done = warm_ids.is_empty()
-	bg_ready = bg_count == 0
-	if bg_ready:
-		_atlas_img = null
-
-
-## Monta alguns chunks por quadro (o cartão de título cobre a espera) para o ato entrar sem travar.
-func warm(budget: int) -> void:
-	if warm_done:
-		return
-	var n := 0
-	while warm_i < warm_ids.size() and n < budget:
-		var id: int = warm_ids[warm_i]
-		var imgs: Array = _chunk_images(id)
-		if id > 0 and id < _slot_of.size() and _slot_of[id] != 0 and _atlas_img != null:
-			var slot: int = int(_slot_of[id]) - 1
-			var pos := Vector2i((slot % atlas_cols) * 256, int(slot / atlas_cols) * 256)
-			_atlas_img.blit_rect(imgs[0], Rect2i(0, 0, 256, 256), pos)
-			_atlas_img.blend_rect(imgs[1], Rect2i(0, 0, 256, 256), pos)
-		if not chunk_cache.has(id):
-			chunk_cache[id] = [ImageTexture.create_from_image(imgs[0]), ImageTexture.create_from_image(imgs[1])]
-		warm_i += 1
-		n += 1
-		if not bg_ready and warm_i >= bg_count:
-			_finish_bg()
-	if warm_i >= warm_ids.size():
-		if not bg_ready:
-			_finish_bg()
-		warm_done = true
-
-
-func _finish_bg() -> void:
-	if _atlas_img != null:
-		bg_atlas = ImageTexture.create_from_image(_atlas_img)
-		_atlas_img = null
-	bg_ready = true
+	var res := [ImageTexture.create_from_image(low), ImageTexture.create_from_image(high)]
+	chunk_cache[cid] = res
+	if chunk_cache.size() > 160:
+		chunk_cache.erase(chunk_cache.keys()[0])
+	return res
 
 
 func backdrop_color() -> Color:

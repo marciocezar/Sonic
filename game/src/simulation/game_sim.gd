@@ -94,9 +94,6 @@ func setup(l: LevelData, lamp: Dictionary = {}) -> void:
 	animator = Animator.new()
 	if l.rom.size() == 0x80000:
 		animator.use_rom(l.rom)
-	elif l.sprite_rom.size() == 0x80000:
-		# Lab Zone: o sprite vem da ROM, então os quadros também (os roteiros próprios não batem no mapeamento).
-		animator.use_rom(l.sprite_rom)
 	objects = ObjectManager.new(self)
 	limit_left1 = l.limit_left
 	limit_right1 = l.limit_right

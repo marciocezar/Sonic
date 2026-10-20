@@ -102,32 +102,16 @@ func chunk_textures_at(col: int, row: int, cid: int) -> Array:
 				var gy := (row & 7) * 16 + by
 				if (bw & 0x3FF) == 0 or (bw & 0x6000) == 0 or level.collision_index[bw & 0x3FF] == 0:
 					if gx < bw_cols and inside[gy * bw_cols + gx] == 1:
-						_paint_fill(img, bx * 16, by * 16, true)
+						var checker := (((col * 256 + bx * 16) / 32) + ((by * 16 + row * 256) / 32)) % 2 == 0
+						img.fill_rect(Rect2i(bx * 16 * scale, by * 16 * scale, 16 * scale, 16 * scale),
+								theme["soil_a"] if checker else theme["soil_b"])
 					continue
 				_paint_block(img, bw, bx * 16, by * 16, id, bx, by)
 	var res := [ImageTexture.create_from_image(img), null]
 	chunk_cache[key] = res
-	if chunk_cache.size() > 120:
+	if chunk_cache.size() > 40:
 		chunk_cache.erase(chunk_cache.keys()[0])
 	return res
-
-
-func _hash(x: int, y: int) -> int:
-	var n := (x * 374761393 + y * 668265263) & 0x7fffffff
-	n = (n ^ (n >> 13)) * 1274126177
-	return (n ^ (n >> 16)) & 255
-
-
-func _paint_fill(img: Image, ox: int, oy: int, buried: bool) -> void:
-	var S := scale
-	var base: Color = theme["soil_b"] if buried else theme["soil_a"]
-	for py in range(16):
-		for px in range(16):
-			var h := _hash(ox + px, oy + py)
-			var c := base.lightened(0.08 if (h & 3) == 0 else (-0.06 if (h & 3) == 1 else 0.0))
-			if (px % 8) == 0 or (py % 8) == 0:
-				c = theme["rim"].darkened(0.45)
-			img.fill_rect(Rect2i((ox + px) * S, (oy + py) * S, S, S), c)
 
 
 func _paint_block(img: Image, bw: int, ox: int, oy: int, cid: int, bx: int, by: int) -> void:
@@ -157,23 +141,12 @@ func _paint_block(img: Image, bw: int, ox: int, oy: int, cid: int, bx: int, by: 
 		else:
 			y_start = (oy + 16 - h) * scale
 			y_end = (oy + 16) * scale
-		for py in range(y_start, y_end, scale):
-			var wy := int(py / scale)
-			var n := _hash(ox + col, wy)
-			var c := soil.lightened(0.05 if (n & 7) == 0 else 0.0)
-			if (ox + col) % 8 == 0:
-				c = c.darkened(0.12)
-			img.fill_rect(Rect2i(x, py, scale, scale), c)
+		img.fill_rect(Rect2i(x, y_start, scale, y_end - y_start), soil)
 		if cv.y == 0 and (h < 16 or above_empty):
-			var jag := _hash(ox + col, oy) % 3
-			var g := (4 + jag) * scale
+			var g := 3 * scale
 			img.fill_rect(Rect2i(x, y_start, scale, mini(g, y_end - y_start)), theme["top"])
-			if y_end - y_start > scale:
-				img.fill_rect(Rect2i(x, y_start, scale, scale), theme["top"].lightened(0.25))
 			if y_end - y_start > g:
-				img.fill_rect(Rect2i(x, y_start + g - scale, scale, scale), theme["top2"])
-			if (ox + col) % 5 == 0 and y_start >= scale:
-				img.fill_rect(Rect2i(x, y_start - scale, scale, scale), theme["top"].lightened(0.15))
+				img.fill_rect(Rect2i(x, y_start + g, scale, scale), theme["top2"])
 
 
 func backdrop_color() -> Color:
