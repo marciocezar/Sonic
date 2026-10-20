@@ -1,0 +1,1 @@
+{"name": "ghz1_jumps", "level": "ghz1", "description": "Salto curto (1 quadro), salto longo (segurado), salto com movimento e controle aéreo.", "inputs": [[10, ""], [1, "C"], [60, ""], [30, "C"], [40, ""], [30, "R"], [25, "RC"], [20, "L"], [40, ""]], "frames": 300}

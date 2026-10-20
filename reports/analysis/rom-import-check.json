@@ -1,0 +1,214 @@
+{
+  "timestamp": "2026-10-18T23:16:36+00:00",
+  "levels": {
+    "ghz1": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "ghz2": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "ghz3": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "lz1": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "lz2": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "lz3": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "sbz3": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "mz1": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "mz2": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "mz3": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "slz1": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "slz2": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "slz3": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "syz1": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "syz2": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "syz3": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "sbz1": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "sbz2": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    },
+    "fz": {
+      "layout": true,
+      "chunks": true,
+      "chunk_count": 82,
+      "collision_index": true,
+      "start": true,
+      "limits": true,
+      "loops": true,
+      "objects": true,
+      "water": true
+    }
+  }
+}

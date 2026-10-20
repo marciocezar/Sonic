@@ -1,0 +1,1 @@
+progressao: ghz1:true,ghz2:true,ghz3:true,mz1:true,mz2:true,mz3:true,syz1:true,syz2:true,syz3:true,lz1:true,lz2:true,lz3:true,slz1:true,slz2:true,slz3:true,sbz1:true,sbz2:true,sbz3:true,fz:true

@@ -1,0 +1,710 @@
+{
+  "timestamp": "2026-10-19T02:57:52+00:00",
+  "objetos": [
+    {
+      "id": "0xd",
+      "amostras": 728,
+      "ok": false,
+      "erros": {
+        "quadro": 636,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x4",
+            "0x0"
+          ],
+          546
+        ]
+      }
+    },
+    {
+      "id": "0x11",
+      "amostras": 54612,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x12",
+      "amostras": 163,
+      "ok": false,
+      "erros": {
+        "quadro": 139,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x1",
+            "0x0"
+          ],
+          37
+        ]
+      }
+    },
+    {
+      "id": "0x15",
+      "amostras": 15700,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x17",
+      "amostras": 3072,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x18",
+      "amostras": 14616,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x1a",
+      "amostras": 6790,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x1c",
+      "amostras": 8312,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x1f",
+      "amostras": 3442,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x22",
+      "amostras": 8047,
+      "ok": false,
+      "erros": {
+        "quadro": 159,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x3",
+            "0x2"
+          ],
+          159
+        ]
+      }
+    },
+    {
+      "id": "0x23",
+      "amostras": 1604,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x25",
+      "amostras": 123273,
+      "ok": false,
+      "erros": {
+        "quadro": 399,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x2",
+            "0x1"
+          ],
+          45
+        ]
+      }
+    },
+    {
+      "id": "0x26",
+      "amostras": 11551,
+      "ok": false,
+      "erros": {
+        "quadro": 168,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x2",
+            "0x8"
+          ],
+          159
+        ]
+      }
+    },
+    {
+      "id": "0x27",
+      "amostras": 546,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x28",
+      "amostras": 598,
+      "ok": false,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 36,
+        "mapa": 36
+      },
+      "exemplo": {
+        "arte": [
+          [
+            "0x580",
+            "0x592"
+          ],
+          36
+        ],
+        "mapa": [
+          [
+            "0x9466",
+            "0x947e"
+          ],
+          36
+        ]
+      }
+    },
+    {
+      "id": "0x29",
+      "amostras": 320,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x2b",
+      "amostras": 5459,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x2d",
+      "amostras": 631,
+      "ok": false,
+      "erros": {
+        "quadro": 617,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x3",
+            "0x0"
+          ],
+          286
+        ]
+      }
+    },
+    {
+      "id": "0x2e",
+      "amostras": 248,
+      "ok": false,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 124
+      },
+      "exemplo": {
+        "mapa": [
+          [
+            "0xa5f6",
+            "0xa5eb"
+          ],
+          124
+        ]
+      }
+    },
+    {
+      "id": "0x2f",
+      "amostras": 2076,
+      "ok": false,
+      "erros": {
+        "quadro": 1226,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x2",
+            "0x0"
+          ],
+          734
+        ]
+      }
+    },
+    {
+      "id": "0x36",
+      "amostras": 21549,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x37",
+      "amostras": 2841,
+      "ok": false,
+      "erros": {
+        "quadro": 1922,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x3",
+            "0x1"
+          ],
+          200
+        ]
+      }
+    },
+    {
+      "id": "0x3b",
+      "amostras": 6304,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x3c",
+      "amostras": 14856,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x3d",
+      "amostras": 392,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x3e",
+      "amostras": 796,
+      "ok": false,
+      "erros": {
+        "quadro": 398,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x1",
+            "0x0"
+          ],
+          200
+        ]
+      }
+    },
+    {
+      "id": "0x40",
+      "amostras": 9165,
+      "ok": false,
+      "erros": {
+        "quadro": 159,
+        "flags": 17,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x4",
+            "0x6"
+          ],
+          159
+        ],
+        "flags": [
+          [
+            "0x0",
+            "0x1"
+          ],
+          17
+        ]
+      }
+    },
+    {
+      "id": "0x41",
+      "amostras": 8258,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x42",
+      "amostras": 4118,
+      "ok": false,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 284,
+        "mapa": 0
+      },
+      "exemplo": {
+        "arte": [
+          [
+            "0x49b",
+            "0x249b"
+          ],
+          284
+        ]
+      }
+    },
+    {
+      "id": "0x44",
+      "amostras": 14552,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x4b",
+      "amostras": 63,
+      "ok": false,
+      "erros": {
+        "quadro": 47,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x2",
+            "0x0"
+          ],
+          16
+        ]
+      }
+    },
+    {
+      "id": "0x54",
+      "amostras": 217,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x56",
+      "amostras": 957,
+      "ok": false,
+      "erros": {
+        "quadro": 206,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x7",
+            "0x0"
+          ],
+          206
+        ]
+      }
+    },
+    {
+      "id": "0x5b",
+      "amostras": 233,
+      "ok": false,
+      "erros": {
+        "quadro": 0,
+        "flags": 233,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "flags": [
+          [
+            "0x0",
+            "0x1"
+          ],
+          233
+        ]
+      }
+    },
+    {
+      "id": "0x5c",
+      "amostras": 114,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x5f",
+      "amostras": 327,
+      "ok": false,
+      "erros": {
+        "quadro": 327,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x7",
+            "0x0"
+          ],
+          80
+        ]
+      }
+    },
+    {
+      "id": "0x61",
+      "amostras": 105,
+      "ok": false,
+      "erros": {
+        "quadro": 105,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x3",
+            "0x0"
+          ],
+          105
+        ]
+      }
+    },
+    {
+      "id": "0x64",
+      "amostras": 206,
+      "ok": false,
+      "erros": {
+        "quadro": 206,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x14",
+            "0x0"
+          ],
+          190
+        ]
+      }
+    },
+    {
+      "id": "0x69",
+      "amostras": 287,
+      "ok": false,
+      "erros": {
+        "quadro": 113,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x2",
+            "0x0"
+          ],
+          97
+        ]
+      }
+    },
+    {
+      "id": "0x71",
+      "amostras": 495,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x78",
+      "amostras": 471,
+      "ok": false,
+      "erros": {
+        "quadro": 365,
+        "flags": 142,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {
+        "quadro": [
+          [
+            "0x17",
+            "0x0"
+          ],
+          110
+        ],
+        "flags": [
+          [
+            "0x1",
+            "0x0"
+          ],
+          142
+        ]
+      }
+    },
+    {
+      "id": "0x79",
+      "amostras": 1008,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    },
+    {
+      "id": "0x7d",
+      "amostras": 240,
+      "ok": true,
+      "erros": {
+        "quadro": 0,
+        "flags": 0,
+        "arte": 0,
+        "mapa": 0
+      },
+      "exemplo": {}
+    }
+  ]
+}

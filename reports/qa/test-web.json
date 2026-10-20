@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-10-18T23:46:04+00:00",
+  "http_results": [
+    {
+      "file": "index.apple-touch-icon.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 9365,
+      "match": true
+    },
+    {
+      "file": "index.audio.position.worklet.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 2973,
+      "match": true
+    },
+    {
+      "file": "index.audio.worklet.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 7298,
+      "match": true
+    },
+    {
+      "file": "index.embed.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 53058520,
+      "match": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 6897,
+      "match": true
+    },
+    {
+      "file": "index.icon.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 4331,
+      "match": true
+    },
+    {
+      "file": "index.js",
+      "status": 200,
+      "type": "text/javascript",
+      "bytes": 279815,
+      "match": true
+    },
+    {
+      "file": "index.pck",
+      "status": 200,
+      "type": "application/octet-stream",
+      "bytes": 268772,
+      "match": true
+    },
+    {
+      "file": "index.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 21443,
+      "match": true
+    },
+    {
+      "file": "index.wasm",
+      "status": 200,
+      "type": "application/wasm",
+      "bytes": 39514754,
+      "match": true
+    },
+    {
+      "file": "staticwebapp.config.json",
+      "status": 200,
+      "type": "application/json",
+      "bytes": 187,
+      "match": true
+    },
+    {
+      "file": "web.config",
+      "status": 200,
+      "type": "application/octet-stream",
+      "bytes": 1035,
+      "match": true
+    }
+  ],
+  "ok": true,
+  "note": "Smoke HTTP local. Execução no navegador (WebGL2/teclado) registrada em docs/qa quando realizada."
+}

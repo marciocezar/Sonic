@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-18T20:36:43+00:00",
+  "direct": [
+    {
+      "name": "Godot Engine (editor + export templates)",
+      "version": "4.7.2-stable",
+      "license": "MIT",
+      "source": "https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_macos.universal.zip",
+      "hash": "sha512:38aa16e5bba2083941fc5b3e54be0089…",
+      "use": "runtime + build (embutido nos builds)"
+    },
+    {
+      "name": "rea-agents (REA)",
+      "version": "6.7.0",
+      "license": "MIT",
+      "source": "npm",
+      "hash": "sha512-yhIx2ioJYYT1C/tONfYeitC6LhnKmCh+Z…",
+      "use": "ferramenta de análise local (não distribuída)"
+    },
+    {
+      "name": "Ghidra",
+      "version": "12.1.4",
+      "license": "Apache-2.0",
+      "source": "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip",
+      "hash": "sha256:ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db",
+      "use": "análise local (não distribuída)"
+    },
+    {
+      "name": "Python 3 stdlib",
+      "version": "3.9+",
+      "license": "PSF-2.0",
+      "source": "host",
+      "use": "tooling (não distribuído)"
+    }
+  ],
+  "copyleft_tooling": []
+}

@@ -1,0 +1,147 @@
+{
+  "replay": "syz1_bot",
+  "status": "DIVERGE_FRONTEIRA",
+  "frontier": "objetos da zona ainda não reconstruídos; replay usado para validar plano de fundo/deformação até a 1ª divergência",
+  "frames_compared": 751,
+  "stop": "fim do replay",
+  "first_divergence_frame": 736,
+  "strict_first": {
+    "y": {
+      "frame": 736,
+      "ref": 927,
+      "got": 928,
+      "input": "L"
+    },
+    "st": {
+      "frame": 738,
+      "ref": 9,
+      "got": 1,
+      "input": "L"
+    },
+    "camy": {
+      "frame": 739,
+      "ref": 820,
+      "got": 814,
+      "input": "L"
+    },
+    "bgy": {
+      "frame": 739,
+      "ref": 10047488,
+      "got": 9973760,
+      "input": "L"
+    },
+    "bgv": {
+      "frame": 739,
+      "ref": 153,
+      "got": 152,
+      "input": "L"
+    },
+    "xs": {
+      "frame": 740,
+      "ref": 13824,
+      "got": 10752,
+      "input": "L"
+    },
+    "xv": {
+      "frame": 740,
+      "ref": -1224,
+      "got": -1236,
+      "input": "L"
+    },
+    "yv": {
+      "frame": 740,
+      "ref": 0,
+      "got": 56,
+      "input": "L"
+    },
+    "gs": {
+      "frame": 740,
+      "ref": -1224,
+      "got": -1212,
+      "input": "L"
+    },
+    "frm": {
+      "frame": 740,
+      "ref": 9,
+      "got": 8,
+      "input": "L"
+    },
+    "ys": {
+      "frame": 741,
+      "ref": 10752,
+      "got": 25088,
+      "input": "L"
+    },
+    "rt": {
+      "frame": 742,
+      "ref": 2,
+      "got": 6,
+      "input": "L"
+    },
+    "camx": {
+      "frame": 742,
+      "ref": 352,
+      "got": 357,
+      "input": "L"
+    },
+    "bgx": {
+      "frame": 742,
+      "ref": 5767168,
+      "got": 5849088,
+      "input": "L"
+    },
+    "hsb": {
+      "frame": 742,
+      "ref": [
+        [
+          -88,
+          224
+        ]
+      ],
+      "got": [
+        [
+          -89,
+          224
+        ]
+      ],
+      "input": "L"
+    },
+    "x": {
+      "frame": 743,
+      "ref": 491,
+      "got": 496,
+      "input": "L"
+    }
+  },
+  "strict_mismatch_frames": {
+    "y": 15,
+    "st": 8,
+    "camy": 12,
+    "bgy": 12,
+    "bgv": 12,
+    "xs": 11,
+    "xv": 10,
+    "yv": 11,
+    "gs": 10,
+    "frm": 11,
+    "ys": 10,
+    "rt": 8,
+    "camx": 9,
+    "bgx": 9,
+    "hsb": 9,
+    "x": 8
+  },
+  "soft_first": {
+    "anim": {
+      "frame": 742,
+      "ref": 0,
+      "got": 24,
+      "input": "L"
+    }
+  },
+  "soft_mismatch_frames": {
+    "anim": 8
+  },
+  "tolerance": 0,
+  "timestamp": "2026-10-19T02:57:50+00:00"
+}

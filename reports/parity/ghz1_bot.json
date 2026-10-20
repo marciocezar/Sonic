@@ -1,0 +1,33 @@
+{
+  "replay": "ghz1_bot",
+  "status": "IDENTICO",
+  "frontier": null,
+  "frames_compared": 3241,
+  "stop": "quadro 3241: entrada no anel gigante (estágio especial não reconstruído)",
+  "first_divergence_frame": null,
+  "strict_first": {},
+  "strict_mismatch_frames": {},
+  "soft_first": {
+    "lim": {
+      "frame": 3181,
+      "ref": [
+        9151,
+        9407,
+        0,
+        1024
+      ],
+      "got": [
+        0,
+        9407,
+        0,
+        1024
+      ],
+      "input": "R"
+    }
+  },
+  "soft_mismatch_frames": {
+    "lim": 44
+  },
+  "tolerance": 0,
+  "timestamp": "2026-10-19T02:57:41+00:00"
+}

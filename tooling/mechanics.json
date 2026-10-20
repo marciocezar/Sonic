@@ -1,0 +1,239 @@
+{
+ "_doc": "Catálogo de mecânicas/fases. Status: NOT_STARTED | IN_PROGRESS | IMPLEMENTED_NOT_VERIFIED | VERIFIED | BLOCKED. 'evidence' aponta para replays/ledger.",
+ "items": [
+  {
+   "area": "Física",
+   "name": "Aceleração/frenagem/atrito no chão",
+   "status": "VERIFIED",
+   "evidence": "replay ghz1_run_brake (idêntico); EV-TAB fisica"
+  },
+  {
+   "area": "Física",
+   "name": "Salto curto/longo, gravidade, corte",
+   "status": "VERIFIED",
+   "evidence": "replay ghz1_jumps (idêntico)"
+  },
+  {
+   "area": "Física",
+   "name": "Controle aéreo e arrasto",
+   "status": "VERIFIED",
+   "evidence": "replay ghz1_jumps/ghz1_long_run"
+  },
+  {
+   "area": "Física",
+   "name": "Rolamento, roll-jump, desenrolar",
+   "status": "VERIFIED",
+   "evidence": "replay ghz1_roll (idêntico)"
+  },
+  {
+   "area": "Física",
+   "name": "Rampas (resistência, repulsão, queda de paredes)",
+   "status": "VERIFIED",
+   "evidence": "replay ghz1_long_run (idêntico 900 quadros)"
+  },
+  {
+   "area": "Física",
+   "name": "Sensores de chão/parede/teto, modos de quadrante",
+   "status": "VERIFIED",
+   "evidence": "replays ghz1_* (idênticos)"
+  },
+  {
+   "area": "Física",
+   "name": "Loops (troca de caminho) e túneis de rolagem",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "player.gd _loops; replay de loop pendente"
+  },
+  {
+   "area": "Física",
+   "name": "Água (LZ/SBZ3): velocidades, salto, respingo",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "player.gd _water; nível da água dinâmico pendente"
+  },
+  {
+   "area": "Física",
+   "name": "Afogamento / bolhas de ar",
+   "status": "NOT_STARTED",
+   "evidence": ""
+  },
+  {
+   "area": "Câmera",
+   "name": "Rolagem horizontal/vertical, look up/down",
+   "status": "VERIFIED",
+   "evidence": "camx/camy/look idênticos nos replays ghz1_*"
+  },
+  {
+   "area": "Câmera",
+   "name": "Eventos dinâmicos de limites GHZ",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "dynamic_events.gd; replay até x>=0x1780 pendente"
+  },
+  {
+   "area": "Câmera",
+   "name": "Eventos dinâmicos MZ/SYZ/LZ/SLZ/SBZ/FZ",
+   "status": "NOT_STARTED",
+   "evidence": ""
+  },
+  {
+   "area": "Objetos",
+   "name": "Anéis (grupos, coleta, respawn)",
+   "status": "VERIFIED",
+   "evidence": "rings idênticos no replay ghz1_long_run"
+  },
+  {
+   "area": "Objetos",
+   "name": "Monitor + conteúdo (10 anéis/tênis/escudo/invencibilidade/vida)",
+   "status": "VERIFIED",
+   "evidence": "quique no monitor (quadro 174) idêntico; efeitos de conteúdo além de anéis não verificados"
+  },
+  {
+   "area": "Objetos",
+   "name": "Perda de anéis ao sofrer dano",
+   "status": "VERIFIED",
+   "evidence": "ghz2_bot: dano com anéis, espalhamento e recoleta idênticos (eixos seno/cosseno confirmados em ROM 0x9D40)"
+  },
+  {
+   "area": "Objetos",
+   "name": "Inimigos GHZ (Motobug, Crabmeat, Buzz Bomber, Chopper, Newtron)",
+   "status": "VERIFIED",
+   "evidence": "Motobug, Crabmeat(+bola), Buzz Bomber(+míssil), Chopper, Newtron: replays ghz1_bot/ghz2_bot/ghz3_bot/ghz1_death idênticos (ocupação de slots idêntica)"
+  },
+  {
+   "area": "Objetos",
+   "name": "Molas, espinhos, plataformas, ponte, pedra, muro",
+   "status": "IN_PROGRESS",
+   "evidence": "VERIFIED: molas, espinhos (bug REV00), ponte, pedra, plataforma 0x18, balanço 0x15, borda 0x44, parede quebrável 0x3C; pendentes: desmoronável 0x1A, tronco 0x17"
+  },
+  {
+   "area": "Objetos",
+   "name": "Placa de fim de ato, poste de checkpoint",
+   "status": "IN_PROGRESS",
+   "evidence": "placa VERIFIED (tempo para, câmera trava) em ghz1_bot; poste pendente"
+  },
+  {
+   "area": "Chefes",
+   "name": "Chefes de todas as zonas e Final Zone",
+   "status": "NOT_STARTED",
+   "evidence": ""
+  },
+  {
+   "area": "Fluxo",
+   "name": "Título, seleção, pausa, opções, game over",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "main.gd (apresentação própria; não reproduz telas originais)"
+  },
+  {
+   "area": "Fluxo",
+   "name": "Cartão de título, HUD, tempo, vidas, pontuação",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "tempo/vidas/pontuação idênticos nos replays; visual próprio"
+  },
+  {
+   "area": "Fluxo",
+   "name": "Fim de ato com bônus e progressão",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "ordem EV-TAB progressao; tabela de bônus de tempo medida (ROM 0xECF0) usada pela placa"
+  },
+  {
+   "area": "Fluxo",
+   "name": "Morte, reinício, game over, continues",
+   "status": "IN_PROGRESS",
+   "evidence": "morte por inimigo sem anéis VERIFIED (ghz1_death até a recarga); continues não"
+  },
+  {
+   "area": "Fluxo",
+   "name": "Estágios especiais e esmeraldas",
+   "status": "NOT_STARTED",
+   "evidence": ""
+  },
+  {
+   "area": "Fluxo",
+   "name": "Final (ending) e créditos",
+   "status": "NOT_STARTED",
+   "evidence": ""
+  },
+  {
+   "area": "Fases",
+   "name": "Geometria das 19 fases (privado, ROM do usuário)",
+   "status": "VERIFIED",
+   "evidence": "EV-EXT plano A 1120/1120 em todas as fases"
+  },
+  {
+   "area": "Fases",
+   "name": "Fase própria publicável Lab Zone",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "tooling/gen_demo_level.py"
+  },
+  {
+   "area": "Render",
+   "name": "Fidelity com arte privada (VRAM capturada)",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "screenshots locais; sprites próprios; parallax aproximado"
+  },
+  {
+   "area": "Render",
+   "name": "Enhanced com arte própria",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "geometry_art.gd/sprite_painter.gd"
+  },
+  {
+   "area": "Render",
+   "name": "Mesma simulação em ambos os perfis",
+   "status": "VERIFIED",
+   "evidence": "mesmo estado final (x/y/anéis) em smoke Fidelity e Enhanced"
+  },
+  {
+   "area": "Áudio",
+   "name": "Efeitos sonoros próprios por evento",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "audio_bus.gd"
+  },
+  {
+   "area": "Áudio",
+   "name": "Música/FM reconstruída",
+   "status": "NOT_STARTED",
+   "evidence": "sem assets licenciados"
+  },
+  {
+   "area": "Entrada",
+   "name": "Teclado remapeável persistido, gamepad",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "input_router.gd; teclado verificado no navegador"
+  },
+  {
+   "area": "Entrada",
+   "name": "Toque multitoque (lógica)",
+   "status": "VERIFIED",
+   "evidence": "make test-touch (11 casos)"
+  },
+  {
+   "area": "Entrada",
+   "name": "Toque em aparelho real",
+   "status": "BLOCKED",
+   "evidence": "sem aparelho; emulador suspenso por decisão do usuário"
+  },
+  {
+   "area": "Objetos",
+   "name": "Explosão → animal (RNG) → pontos",
+   "status": "VERIFIED",
+   "evidence": "slots/RNG idênticos ao longo de ghz1_bot"
+  },
+  {
+   "area": "Objetos",
+   "name": "Bônus escondido e anel gigante (presença/toque)",
+   "status": "IMPLEMENTED_NOT_VERIFIED",
+   "evidence": "bônus VERIFIED na pontuação de ghz1_bot; anel gigante leva a estágio especial (BLOQUEADO)"
+  },
+  {
+   "area": "Objetos",
+   "name": "Carga/descarga de objetos pela câmera (cursores, respawn)",
+   "status": "VERIFIED",
+   "evidence": "lógica de ROM 0xD8F0..0xDA8A; ocupação de slots idêntica em ghz1/2/3_bot"
+  },
+  {
+   "area": "Simulação",
+   "name": "Osciladores globais e animação sincronizada",
+   "status": "VERIFIED",
+   "evidence": "ROM 0x4118/0x416E/0x4206; plataformas e balanços idênticos em ghz2_bot"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+SUITE bench
+PASS bench lab1: 17.6 us/tick (orçamento 16667 us) objetos=5
+PASS bench ghz1: 15.7 us/tick (orçamento 16667 us) objetos=12
+TOTAL pass=2 fail=0

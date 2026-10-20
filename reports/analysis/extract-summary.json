@@ -1,0 +1,425 @@
+{
+  "timestamp": "2026-10-18T20:52:19+00:00",
+  "rom_sha256": "46160baa06362c711c9f1a5017cb7371026444936c8af5e93a78996cf32ff2a6",
+  "levels": [
+    {
+      "id": "ghz1",
+      "zone": 0,
+      "act": 0,
+      "loaded": true,
+      "start": {
+        "x": 80,
+        "y": 944
+      },
+      "limits": {
+        "left": 0,
+        "right": 9407,
+        "top": 0,
+        "bottom": 768
+      },
+      "chunks": 82,
+      "blocks": 439,
+      "nametable_match": "1120/1120",
+      "objects": 214,
+      "collindex_rom": "0x064A00",
+      "objects_rom": "0x06B096"
+    },
+    {
+      "id": "ghz2",
+      "zone": 0,
+      "act": 1,
+      "loaded": true,
+      "start": {
+        "x": 80,
+        "y": 252
+      },
+      "limits": {
+        "left": 0,
+        "right": 7871,
+        "top": 0,
+        "bottom": 768
+      },
+      "chunks": 82,
+      "blocks": 439,
+      "nametable_match": "1120/1120",
+      "objects": 244,
+      "collindex_rom": "0x064A00",
+      "objects_rom": "0x06B5A0"
+    },
+    {
+      "id": "ghz3",
+      "zone": 0,
+      "act": 2,
+      "loaded": true,
+      "start": {
+        "x": 80,
+        "y": 944
+      },
+      "limits": {
+        "left": 0,
+        "right": 10592,
+        "top": 0,
+        "bottom": 768
+      },
+      "chunks": 82,
+      "blocks": 439,
+      "nametable_match": "1120/1120",
+      "objects": 286,
+      "collindex_rom": "0x064A00",
+      "objects_rom": "0x06BB5E"
+    },
+    {
+      "id": "lz1",
+      "zone": 1,
+      "act": 0,
+      "loaded": true,
+      "start": {
+        "x": 96,
+        "y": 108
+      },
+      "limits": {
+        "left": 0,
+        "right": 6591,
+        "top": 0,
+        "bottom": 1328
+      },
+      "chunks": 82,
+      "blocks": 195,
+      "nametable_match": "1120/1120",
+      "objects": 188,
+      "collindex_rom": "0x064B9A",
+      "objects_rom": "0x06C218"
+    },
+    {
+      "id": "lz2",
+      "zone": 1,
+      "act": 1,
+      "loaded": true,
+      "start": {
+        "x": 80,
+        "y": 236
+      },
+      "limits": {
+        "left": 0,
+        "right": 4271,
+        "top": 0,
+        "bottom": 1824
+      },
+      "chunks": 82,
+      "blocks": 196,
+      "nametable_match": "1120/1120",
+      "objects": 138,
+      "collindex_rom": "0x064B9A",
+      "objects_rom": "0x06C686"
+    },
+    {
+      "id": "lz3",
+      "zone": 1,
+      "act": 2,
+      "loaded": true,
+      "start": {
+        "x": 80,
+        "y": 748
+      },
+      "limits": {
+        "left": 0,
+        "right": 8239,
+        "top": -256,
+        "bottom": 2048
+      },
+      "chunks": 82,
+      "blocks": 196,
+      "nametable_match": "1120/1120",
+      "objects": 250,
+      "collindex_rom": "0x064B9A",
+      "objects_rom": "0x06C9C8"
+    },
+    {
+      "id": "sbz3",
+      "zone": 1,
+      "act": 3,
+      "loaded": true,
+      "start": {
+        "x": 2944,
+        "y": 0
+      },
+      "limits": {
+        "left": 0,
+        "right": 8383,
+        "top": 0,
+        "bottom": 1824
+      },
+      "chunks": 82,
+      "blocks": 196,
+      "nametable_match": "1120/1120",
+      "objects": 195,
+      "collindex_rom": "0x064B9A",
+      "objects_rom": "0x06CFAA"
+    },
+    {
+      "id": "mz1",
+      "zone": 2,
+      "act": 0,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 614
+      },
+      "limits": {
+        "left": 0,
+        "right": 6079,
+        "top": 0,
+        "bottom": 464
+      },
+      "chunks": 82,
+      "blocks": 368,
+      "nametable_match": "1120/1120",
+      "objects": 145,
+      "collindex_rom": "0x064C62",
+      "objects_rom": "0x06D592"
+    },
+    {
+      "id": "mz2",
+      "zone": 2,
+      "act": 1,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 614
+      },
+      "limits": {
+        "left": 0,
+        "right": 6079,
+        "top": 0,
+        "bottom": 1312
+      },
+      "chunks": 82,
+      "blocks": 368,
+      "nametable_match": "1120/1120",
+      "objects": 198,
+      "collindex_rom": "0x064C62",
+      "objects_rom": "0x06D8FE"
+    },
+    {
+      "id": "mz3",
+      "zone": 2,
+      "act": 2,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 358
+      },
+      "limits": {
+        "left": 0,
+        "right": 6144,
+        "top": 0,
+        "bottom": 1824
+      },
+      "chunks": 82,
+      "blocks": 368,
+      "nametable_match": "1120/1120",
+      "objects": 232,
+      "collindex_rom": "0x064C62",
+      "objects_rom": "0x06DDA8"
+    },
+    {
+      "id": "slz1",
+      "zone": 3,
+      "act": 0,
+      "loaded": true,
+      "start": {
+        "x": 64,
+        "y": 716
+      },
+      "limits": {
+        "left": 0,
+        "right": 8127,
+        "top": 0,
+        "bottom": 1600
+      },
+      "chunks": 82,
+      "blocks": 414,
+      "nametable_match": "1120/1120",
+      "objects": 223,
+      "collindex_rom": "0x064DF2",
+      "objects_rom": "0x06E31E"
+    },
+    {
+      "id": "slz2",
+      "zone": 3,
+      "act": 1,
+      "loaded": true,
+      "start": {
+        "x": 64,
+        "y": 332
+      },
+      "limits": {
+        "left": 0,
+        "right": 8127,
+        "top": 0,
+        "bottom": 1600
+      },
+      "chunks": 82,
+      "blocks": 414,
+      "nametable_match": "1120/1120",
+      "objects": 187,
+      "collindex_rom": "0x064DF2",
+      "objects_rom": "0x06E85E"
+    },
+    {
+      "id": "slz3",
+      "zone": 3,
+      "act": 2,
+      "loaded": true,
+      "start": {
+        "x": 64,
+        "y": 332
+      },
+      "limits": {
+        "left": 0,
+        "right": 8192,
+        "top": 0,
+        "bottom": 1728
+      },
+      "chunks": 82,
+      "blocks": 414,
+      "nametable_match": "1120/1120",
+      "objects": 250,
+      "collindex_rom": "0x064DF2",
+      "objects_rom": "0x06ECC6"
+    },
+    {
+      "id": "syz1",
+      "zone": 4,
+      "act": 0,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 957
+      },
+      "limits": {
+        "left": 0,
+        "right": 8896,
+        "top": 0,
+        "bottom": 1056
+      },
+      "chunks": 82,
+      "blocks": 431,
+      "nametable_match": "1120/1120",
+      "objects": 193,
+      "collindex_rom": "0x064FE6",
+      "objects_rom": "0x06F2A8"
+    },
+    {
+      "id": "syz2",
+      "zone": 4,
+      "act": 1,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 445
+      },
+      "limits": {
+        "left": 0,
+        "right": 10432,
+        "top": 0,
+        "bottom": 1312
+      },
+      "chunks": 82,
+      "blocks": 431,
+      "nametable_match": "1120/1120",
+      "objects": 230,
+      "collindex_rom": "0x064FE6",
+      "objects_rom": "0x06F734"
+    },
+    {
+      "id": "syz3",
+      "zone": 4,
+      "act": 2,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 236
+      },
+      "limits": {
+        "left": 0,
+        "right": 11264,
+        "top": 0,
+        "bottom": 1568
+      },
+      "chunks": 82,
+      "blocks": 431,
+      "nametable_match": "1120/1120",
+      "objects": 256,
+      "collindex_rom": "0x064FE6",
+      "objects_rom": "0x06FC9E"
+    },
+    {
+      "id": "sbz1",
+      "zone": 5,
+      "act": 0,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 1164
+      },
+      "limits": {
+        "left": 0,
+        "right": 8640,
+        "top": 0,
+        "bottom": 1824
+      },
+      "chunks": 82,
+      "blocks": 602,
+      "nametable_match": "1120/1120",
+      "objects": 308,
+      "collindex_rom": "0x0651DA",
+      "objects_rom": "0x0702A4"
+    },
+    {
+      "id": "sbz2",
+      "zone": 5,
+      "act": 1,
+      "loaded": true,
+      "start": {
+        "x": 48,
+        "y": 1868
+      },
+      "limits": {
+        "left": 0,
+        "right": 7744,
+        "top": -256,
+        "bottom": 2048
+      },
+      "chunks": 82,
+      "blocks": 602,
+      "nametable_match": "1120/1120",
+      "objects": 292,
+      "collindex_rom": "0x0651DA",
+      "objects_rom": "0x0709E2"
+    },
+    {
+      "id": "fz",
+      "zone": 5,
+      "act": 2,
+      "loaded": true,
+      "start": {
+        "x": 8512,
+        "y": 1452
+      },
+      "limits": {
+        "left": 8352,
+        "right": 9312,
+        "top": 1296,
+        "bottom": 1296
+      },
+      "chunks": 82,
+      "blocks": 602,
+      "nametable_match": "1120/1120",
+      "objects": 2,
+      "collindex_rom": "0x0651DA",
+      "objects_rom": "0x0710C0"
+    }
+  ],
+  "private_output": "private/extracted/levelpacks"
+}

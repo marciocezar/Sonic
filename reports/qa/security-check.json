@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-19T02:57:37+00:00",
+  "workspace": "/Users/marcio/_learn/Games/Sonic/Claude",
+  "issues": [],
+  "notes": [
+    "ROM original somente leitura"
+  ],
+  "isolation": {
+    "rea": "sandbox-exec obrigatório (deep analysis BLOQUEADA por EPERM)",
+    "ghidra": "sandbox-exec sem rede, escrita só em work/",
+    "rom_execution": "somente no interpretador 68000 próprio (sem execução nativa)"
+  }
+}

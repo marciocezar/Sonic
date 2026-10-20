@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-19T13:36:43+00:00",
+  "results": {
+    "macos": 0,
+    "windows": 0,
+    "web": 0,
+    "android": 2,
+    "ios": 0
+  },
+  "blocked": [
+    "android"
+  ],
+  "failed": []
+}

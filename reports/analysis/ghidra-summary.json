@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-10-19T02:35:18+00:00",
+  "exit_code": 0,
+  "processor": "68000:BE:32:default",
+  "loader": "BinaryLoader base 0x0",
+  "sandbox": true,
+  "functions": 357,
+  "instructions": 20999
+}

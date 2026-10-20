@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-18T19:14:44+00:00",
+  "sandbox": true,
+  "doctor": {
+    "node": {
+      "ok": true,
+      "detail": "24.18.0"
+    },
+    "ghidra": {
+      "ok": true,
+      "detail": "/Users/marcio/_learn/Games/Sonic/Claude/tooling/ghidra/ghidra_12.1.4_PUBLIC"
+    },
+    "ghidra-platform": {
+      "ok": true,
+      "detail": "darwin"
+    },
+    "ghidra-architecture": {
+      "ok": true,
+      "detail": "arm64"
+    },
+    "ghidra-installation": {
+      "ok": true,
+      "detail": "/Users/marcio/_learn/Games/Sonic/Claude/tooling/ghidra/ghidra_12.1.4_PUBLIC/Ghidra/application.properties"
+    },
+    "ghidra-version": {
+      "ok": true,
+      "detail": "12.1.4"
+    },
+    "ghidra-headless": {
+      "ok": true,
+      "detail": "/Users/marcio/_learn/Games/Sonic/Claude/tooling/ghidra/ghidra_12.1.4_PUBLIC/support/analyzeHeadless"
+    },
+    "ghidra-native_decompiler": {
+      "ok": true,
+      "detail": "/Users/marcio/_learn/Games/Sonic/Claude/tooling/ghidra/ghidra_12.1.4_PUBLIC/Ghidra/Features/Decompiler/os/mac_arm_64/decompile reports mach-o arm64, which matches darwin/arm64"
+    },
+    "ghidra-java": {
+      "ok": false,
+      "detail": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home/bin/java: spawn EPERM"
+    }
+  },
+  "ghidra_installed": true,
+  "ghidra_native_decompiler": true,
+  "java_home": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home"
+}

@@ -1,0 +1,29 @@
+# ROM e derivados (privados; não publicar)
+*.md.rom
+/Sonic The Hedgehog (USA, Europe).md
+roms/
+private/
+
+# Saída de build e trabalho local
+work/
+dist/
+dist-private/
+
+# Ferramentas baixadas por `make bootstrap` (Godot, Ghidra, REA)
+tooling/ghidra/
+tooling/godot/
+node_modules/
+
+# Segredos e pacotes de assinatura
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+.env
+
+# Cache e ruído
+*.log
+.godot/
+__pycache__/
+*.pyc
+.DS_Store

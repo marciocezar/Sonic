@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-10-19T02:57:50+00:00",
+  "results": [
+    {
+      "replay": "ghz1_bot",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 3241,
+      "stop": "quadro 3241: entrada no anel gigante (estágio especial não reconstruído)",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz1_death",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 329,
+      "stop": "quadro 329: referência recarregando a fase",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz1_idle",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 241,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz1_jumps",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 301,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz1_ledge",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 601,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz1_long_run",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 901,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz1_roll",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 301,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz1_run_brake",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 261,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz2_bot",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 1884,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "ghz3_boss",
+      "status": "DIVERGE_FRONTEIRA",
+      "frontier": "chefe GHZ (0x3D/0x48) ainda não reconstruído",
+      "frames_compared": 1059,
+      "stop": "fim do replay",
+      "first_divergence_frame": 1059
+    },
+    {
+      "replay": "ghz3_bot",
+      "status": "IDENTICO",
+      "frontier": null,
+      "frames_compared": 3001,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "lz1_bot",
+      "status": "DIVERGE_FRONTEIRA",
+      "frontier": "objetos da zona ainda não reconstruídos; replay usado para validar plano de fundo/deformação até a 1ª divergência",
+      "frames_compared": 901,
+      "stop": "fim do replay",
+      "first_divergence_frame": 114
+    },
+    {
+      "replay": "mz1_bot",
+      "status": "DIVERGE_FRONTEIRA",
+      "frontier": "objetos de MZ (0x2F e outros) ainda não reconstruídos",
+      "frames_compared": 1538,
+      "stop": "fim do replay",
+      "first_divergence_frame": 0
+    },
+    {
+      "replay": "sbz1_bot",
+      "status": "IDENTICO",
+      "frontier": "objetos da zona ainda não reconstruídos; replay usado para validar plano de fundo/deformação até a 1ª divergência",
+      "frames_compared": 197,
+      "stop": "fim do replay",
+      "first_divergence_frame": null
+    },
+    {
+      "replay": "slz1_bot",
+      "status": "DIVERGE_FRONTEIRA",
+      "frontier": "objetos da zona ainda não reconstruídos; replay usado para validar plano de fundo/deformação até a 1ª divergência",
+      "frames_compared": 901,
+      "stop": "fim do replay",
+      "first_divergence_frame": 345
+    },
+    {
+      "replay": "syz1_bot",
+      "status": "DIVERGE_FRONTEIRA",
+      "frontier": "objetos da zona ainda não reconstruídos; replay usado para validar plano de fundo/deformação até a 1ª divergência",
+      "frames_compared": 751,
+      "stop": "fim do replay",
+      "first_divergence_frame": 736
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+SUITE unit
+PASS sin(0)=0, cos(0)=256
+PASS errata seno 147/237
+PASS angle_of eixos
+PASS angle_of (0,0)=0x40
+PASS Fx.s16 estouro
+PASS aceleração 0x0C no 1º quadro
+PASS velocidade máxima 0x600
+PASS atrito igual à aceleração
+PASS salto: vy inicial -0x680 + gravidade não aplicada no quadro
+PASS salto: rolando no ar
+PASS corte do salto ao soltar (-0x400) + gravidade 0x38
+PASS determinismo 600 quadros
+PASS RNG determinístico com semente padrão
+PASS vida extra aos 100 anéis
+PASS replay expande entradas
+PASS letras de botões
+PASS sensor de chão retorna distância pequena
+PASS settings persistem perfil
+TOTAL pass=18 fail=0

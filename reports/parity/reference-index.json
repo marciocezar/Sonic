@@ -1,0 +1,118 @@
+{
+  "replays": {
+    "ghz1_idle": {
+      "frames": 240,
+      "level": "ghz1",
+      "trace_sha256": "3b849c0b741cbe1bf42c664b1701e26e8a489f1d7b43704d25a2fb3df872eb9b",
+      "replay_sha256": "d2019c507b8078ebb8bac76101d76a322efd4f18220e40f466ddabd182f0011b",
+      "generated": "2026-10-19T02:26:10+00:00"
+    },
+    "ghz1_jumps": {
+      "frames": 300,
+      "level": "ghz1",
+      "trace_sha256": "b0e9a46bc10064829608d71296ee6e23d079824225984348d6211590bdcb562d",
+      "replay_sha256": "2f61c3045704792c70e6275561a4a8f632c21a0b7aaca221c9e059abaff48b15",
+      "generated": "2026-10-19T02:26:15+00:00"
+    },
+    "ghz1_long_run": {
+      "frames": 900,
+      "level": "ghz1",
+      "trace_sha256": "ef0f64bfafba88f1409babcf408988b928a0ea38d6ae5781654082810606ec9a",
+      "replay_sha256": "79db16ab5a9e4a7ab4b3de4d61f67481c28d6333fb963f225bce0cf21c8bfffa",
+      "generated": "2026-10-19T02:26:25+00:00"
+    },
+    "ghz1_roll": {
+      "frames": 300,
+      "level": "ghz1",
+      "trace_sha256": "a38e605ff347b7b194aa22e174fb2e63682fe676a9d570f5c6fce5050fcdafc4",
+      "replay_sha256": "8afa7ed39dd5fd18fe4a4b4a7bca4145c9adaaf90266b3ccd7500f71dbda109d",
+      "generated": "2026-10-19T02:26:30+00:00"
+    },
+    "ghz1_run_brake": {
+      "frames": 260,
+      "level": "ghz1",
+      "trace_sha256": "4b5dd70bc784705538be8f5050dbc050ef03df4784e95330f48cb83d557436c4",
+      "replay_sha256": "d473a59eaa9a3532899bb956e31eb459c1c39b944750b3ccf2b2c349e9d28dfc",
+      "generated": "2026-10-19T02:26:35+00:00"
+    },
+    "ghz1_bot": {
+      "frames": 3877,
+      "level": "ghz1",
+      "trace_sha256": "8ee637f6fe37f00cc515f2740a8296c6d15c53f1e56c8120c54115b36637ca86",
+      "replay_sha256": "f77b5a18da5acbccee7c2b02bc2374f32a8128e1157618914dabd9a43d9d7517",
+      "generated": "2026-10-19T02:26:00+00:00"
+    },
+    "ghz1_death": {
+      "frames": 372,
+      "level": "ghz1",
+      "trace_sha256": "8feb3b22e98a7276e4b91c13ec925de6e250b699451180d8d2200b709d9d4ebd",
+      "replay_sha256": "0a9484d1fb2d142d1844845c31e41b26bcb10d89eca058e5b5d6d2df7b99e0e1",
+      "generated": "2026-10-19T02:26:05+00:00"
+    },
+    "ghz2_bot": {
+      "frames": 1883,
+      "level": "ghz2",
+      "trace_sha256": "9c3ded87f39d9345d51d0cdd7e89214abaf254f311fde475bfb25f8d4261df8d",
+      "replay_sha256": "4bd9dec2cc08de08fd6f67b690533f5509620b65568aaf08631c1c78df2a3742",
+      "generated": "2026-10-19T02:27:01+00:00"
+    },
+    "ghz3_bot": {
+      "frames": 3000,
+      "level": "ghz3",
+      "trace_sha256": "3d9428bae932cbfdd68d7fb82f92f84e9e62eb79f8471542b2e7bd853a02be3f",
+      "replay_sha256": "eccbec04d2bdcd779cce93edc043f92bbd3bb093a24a7773e2bd6ad3989c04e4",
+      "generated": "2026-10-19T02:27:52+00:00"
+    },
+    "mz1_bot": {
+      "frames": 1537,
+      "level": "mz1",
+      "trace_sha256": "cb8c05e3340d1d2978d77068a8a4eb250b54bbb7a9a39f0c315e010cbb30f84d",
+      "replay_sha256": "c73cb36c3858d72c5b1b4ad35c1e044534ac8bf65f6908651096148c686242f4",
+      "generated": "2026-10-19T02:28:21+00:00"
+    },
+    "ghz3_boss": {
+      "frames": 1059,
+      "level": "ghz3",
+      "trace_sha256": "6749d2ae21c804ae0836925cf648c9c1eb6db35409d708974b1ec63a15d7c568",
+      "replay_sha256": "2d79591d00cf0d97fe22db1904244c011d5296824a0964a61339112600d01a2d",
+      "generated": "2026-10-19T02:27:16+00:00"
+    },
+    "lz1_bot": {
+      "frames": 900,
+      "level": "lz1",
+      "trace_sha256": "63a098d920318bca3fe9b14b02de674b23b804dd31ecdf93ba247e0e4058b686",
+      "replay_sha256": "935c87a6e770085f12ee7d2b61a0cdabbc294c8e5b449d163ec4ab5b98937bb6",
+      "generated": "2026-10-19T02:28:03+00:00"
+    },
+    "sbz1_bot": {
+      "frames": 196,
+      "level": "sbz1",
+      "trace_sha256": "948cd4ffd75fc509cc6c2f377d604c62c9b486c5e51fe13b78adcd6ceca58b41",
+      "replay_sha256": "14548e30a23d92f417751c3e05bb872df5e67bc2f05a3f4ee05fe60ba2007ca5",
+      "generated": "2026-10-19T02:28:25+00:00"
+    },
+    "slz1_bot": {
+      "frames": 900,
+      "level": "slz1",
+      "trace_sha256": "86141e5436ecd3106939a966e3fc060b1a467be3dcb843b0d811a66250f6e468",
+      "replay_sha256": "5e30650b160936b440697bc4d926531a8e2f32302f9d586f675a37ed2ab293ea",
+      "generated": "2026-10-19T02:28:36+00:00"
+    },
+    "syz1_bot": {
+      "frames": 750,
+      "level": "syz1",
+      "trace_sha256": "7fabf7e80c18e535dc7323dc96f1498d9a941b710b834f21e6fefe5e1402fd1c",
+      "replay_sha256": "5e2f5d18d9a8bd85c5ae6b917b7b84e1b4e3366dd070fc2fd901b1df1b0b47d8",
+      "generated": "2026-10-19T02:28:45+00:00"
+    },
+    "ghz1_ledge": {
+      "frames": 600,
+      "level": "ghz1",
+      "trace_sha256": "46edfd1b6db626f621d9f753de1f6357e687eb4869d39c65f99059ab371a3601",
+      "replay_sha256": "c51b11f41cc711251cb29683d8a4476b811ec72d5c923207e440468115bf2286",
+      "generated": "2026-10-19T02:40:55+00:00"
+    }
+  },
+  "rom_sha256": "46160baa06362c711c9f1a5017cb7371026444936c8af5e93a78996cf32ff2a6",
+  "emulator": "tooling/mdmachine.py + tooling/m68k.py (interpretador próprio, não cycle-accurate)"
+}

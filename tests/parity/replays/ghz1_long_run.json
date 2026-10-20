@@ -1,0 +1,1 @@
+{"name": "ghz1_long_run", "level": "ghz1", "description": "Corrida longa à direita com saltos periódicos: rampas, loop, anéis, inimigos, câmera.", "inputs": [[10, ""], [120, "R"], [20, "RA"], [100, "R"], [15, "RA"], [200, "R"], [20, "RA"], [400, "R"]], "frames": 900}

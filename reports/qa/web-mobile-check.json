@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-18T23:46:04+00:00",
+  "checks": [
+    {
+      "check": "index.html presente",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "WebAssembly presente",
+      "ok": true,
+      "detail": "index.wasm"
+    },
+    {
+      "check": "PCK presente",
+      "ok": true,
+      "detail": "index.pck"
+    },
+    {
+      "check": "viewport meta para mobile",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "touch-action:none (sem rolagem/zoom por gesto)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "build sem threads (não exige COOP/COEP/SharedArrayBuffer)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "renderer Compatibility (WebGL 2)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "compressão de textura para mobile (ETC2/ASTC)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "tamanho total do bundle",
+      "ok": true,
+      "detail": "93.2 MB"
+    }
+  ],
+  "note": "Verificação estrutural. Carga real em Safari iOS e Chrome Android, multitoque e áudio por gesto exigem aparelho físico: status BUILT_NOT_TESTED até sessão real."
+}

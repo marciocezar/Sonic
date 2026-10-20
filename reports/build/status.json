@@ -1,0 +1,381 @@
+{
+  "macos": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T01:52:28+00:00",
+    "command": "make build-macos",
+    "notes": "exportado; teste em dispositivo/host pendente",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist/macos/MegadrivePlatformerLab.zip",
+        "size": 60925194,
+        "sha256": "84d0bd2b568ffcc50f3ddd4a5ae2fb19f90c2f6ff3147b93e37202a7e4b4a6e1"
+      }
+    ]
+  },
+  "windows": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T02:18:40+00:00",
+    "command": "make build-windows",
+    "notes": "exportado; teste em dispositivo/host pendente",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist/windows/MegadrivePlatformerLab.exe",
+        "size": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      {
+        "path": "dist/windows/MegadrivePlatformerLab.pck",
+        "size": 287596,
+        "sha256": "e7013bfd0f83e3c411783d88e93e55e59998aeb3deca24074f99b7da2501f5e9"
+      }
+    ]
+  },
+  "web": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T13:41:53+00:00",
+    "command": "make build-web",
+    "notes": "exportado; teste em dispositivo/host pendente",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist/web/index.apple-touch-icon.png",
+        "size": 9365,
+        "sha256": "fa65e6a0eef67f5a8441dcb79d7f2995a961833a2965889e8acd6b733158fd7a"
+      },
+      {
+        "path": "dist/web/index.audio.position.worklet.js",
+        "size": 2973,
+        "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+      },
+      {
+        "path": "dist/web/index.audio.worklet.js",
+        "size": 7298,
+        "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+      },
+      {
+        "path": "dist/web/index.embed.js",
+        "size": 53131576,
+        "sha256": "77dcabed63414d13a645b4a3be18dae50e9e30b445a1c89f32b2db18d1d22b18"
+      },
+      {
+        "path": "dist/web/index.html",
+        "size": 6897,
+        "sha256": "64131bd96dacfe47e79dc285fe3f888b5b91b6921d5dccb56cd8efe71c3150ec"
+      },
+      {
+        "path": "dist/web/index.icon.png",
+        "size": 4331,
+        "sha256": "aba023f37e40137149efd3318970fce830954842317db6a47f4a12fddf722685"
+      },
+      {
+        "path": "dist/web/index.js",
+        "size": 279815,
+        "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+      },
+      {
+        "path": "dist/web/index.pck",
+        "size": 323564,
+        "sha256": "4d62bba7d089fff9f51f6507956379f04fc0fa02b682fba8cddfc8247c3aa524"
+      },
+      {
+        "path": "dist/web/index.png",
+        "size": 21443,
+        "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+      },
+      {
+        "path": "dist/web/index.wasm",
+        "size": 39514754,
+        "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+      },
+      {
+        "path": "dist/web/staticwebapp.config.json",
+        "size": 187,
+        "sha256": "2255237637d5c7c2b7d450738785805560f4c95a1cf3b9c0d717d6177f7b39a0"
+      },
+      {
+        "path": "dist/web/web.config",
+        "size": 1035,
+        "sha256": "bda8044de3d2b6da599996383d5aa24d73f9784bbc8e8040f446e244c4f53d3a"
+      }
+    ]
+  },
+  "android": {
+    "status": "BLOCKED",
+    "timestamp": "2026-10-19T13:36:38+00:00",
+    "command": "",
+    "notes": "ANDROID_HOME/ANDROID_SDK_ROOT não definido ou inválido (ver .env.example)",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": []
+  },
+  "ios": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T01:52:42+00:00",
+    "command": "make build-ios",
+    "notes": "Team ID marcador 0000000000 (sem assinatura); IPA exige IOS_TEAM_ID real + provisioning. exportado; teste em dispositivo/host pendente",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist/ios/MegadrivePlatformerLab.xcodeproj/project.pbxproj",
+        "size": 16570,
+        "sha256": "1430d705be2f90e76ff3d376e6536d9511fdc12b92d9f988afae2e346947e24c"
+      },
+      {
+        "path": "dist/ios/MegadrivePlatformerLab.pck",
+        "size": 289756,
+        "sha256": "b45c99c400208d77027f9ed246facc2602414230413e13c5bb4e981c09a3399a"
+      }
+    ]
+  },
+  "web-desktop": {
+    "status": "PASS",
+    "timestamp": "2026-10-18T22:59:31+00:00",
+    "command": "manual/qa-record",
+    "notes": "Via HTTP: Chromium embutido sem erros. Modo file:// (dados embutidos) validado com servidor sem wasm/pck e ?embed=1: abre, entra na fase, console limpo. Abertura por file:// real pendente de confirmacao no navegador do usuario.",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": []
+  },
+  "ios-simulator": {
+    "status": "BLOCKED",
+    "timestamp": "2026-10-18T20:18:51+00:00",
+    "command": "manual/qa-record",
+    "notes": "Template oficial sem fatia arm64-simulator; iOS 27 Simulator nao executa x86_64. Uso de simuladores fora do workspace suspenso a pedido do usuario.",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": []
+  },
+  "web-ios-safari": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-18T23:46:04+00:00",
+    "command": "make web-mobile-check",
+    "notes": "Verificação estrutural. Carga real em Safari iOS e Chrome Android, multitoque e áudio por gesto exigem aparelho físico: status BUILT_NOT_TESTED até sessão real.",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": []
+  },
+  "web-android-chrome": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-18T23:46:04+00:00",
+    "command": "make web-mobile-check",
+    "notes": "Verificação estrutural. Carga real em Safari iOS e Chrome Android, multitoque e áudio por gesto exigem aparelho físico: status BUILT_NOT_TESTED até sessão real.",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": []
+  },
+  "web-rom-import": {
+    "status": "PASS",
+    "timestamp": "2026-10-18T23:35:45+00:00",
+    "command": "manual/qa-record",
+    "notes": "Chromium embutido: ROM REV00 via __sonicRomCb -> menu de zonas originais -> GHZ1 jogavel",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": []
+  },
+  "web-private": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T15:51:16+00:00",
+    "command": "make build-private-web",
+    "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist-private/web/index.apple-touch-icon.png",
+        "size": 9365,
+        "sha256": "fa65e6a0eef67f5a8441dcb79d7f2995a961833a2965889e8acd6b733158fd7a"
+      },
+      {
+        "path": "dist-private/web/index.audio.position.worklet.js",
+        "size": 2973,
+        "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+      },
+      {
+        "path": "dist-private/web/index.audio.worklet.js",
+        "size": 7298,
+        "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+      },
+      {
+        "path": "dist-private/web/index.embed.js",
+        "size": 53900172,
+        "sha256": "540944232a1b7aa8d93f715ee9fb79309f79666a0add4645869931eb6e119b89"
+      },
+      {
+        "path": "dist-private/web/index.html",
+        "size": 6897,
+        "sha256": "94fd69c4376170be1f00db36fecd78bec96f72078955d7d3d1fd2831c348efbc"
+      },
+      {
+        "path": "dist-private/web/index.icon.png",
+        "size": 4331,
+        "sha256": "aba023f37e40137149efd3318970fce830954842317db6a47f4a12fddf722685"
+      },
+      {
+        "path": "dist-private/web/index.js",
+        "size": 279815,
+        "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+      },
+      {
+        "path": "dist-private/web/index.pck",
+        "size": 900012,
+        "sha256": "e979cf8bfd37607b24aaeebc7ade6a2be0a5784cf427d1014c93b7ab4a703f0d"
+      },
+      {
+        "path": "dist-private/web/index.png",
+        "size": 21443,
+        "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+      },
+      {
+        "path": "dist-private/web/index.wasm",
+        "size": 39514754,
+        "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+      },
+      {
+        "path": "dist-private/web/staticwebapp.config.json",
+        "size": 187,
+        "sha256": "2255237637d5c7c2b7d450738785805560f4c95a1cf3b9c0d717d6177f7b39a0"
+      },
+      {
+        "path": "dist-private/web/web.config",
+        "size": 890,
+        "sha256": "3c55b30a91af776529137ebf658489c80524a37097989e1ee5bd034c4a0d5e24"
+      }
+    ]
+  },
+  "macos-private": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T13:36:31+00:00",
+    "command": "make build-private-macos",
+    "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist-private/macos/MegadrivePlatformerLab.zip",
+        "size": 61342303,
+        "sha256": "0379727fa43e3b815391b0ce2c5466afc587559ff5d68df87b56cac2529b9ec2"
+      }
+    ]
+  },
+  "windows-private": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T13:36:34+00:00",
+    "command": "make build-private-windows",
+    "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist-private/windows/MegadrivePlatformerLab.exe",
+        "size": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      {
+        "path": "dist-private/windows/MegadrivePlatformerLab.pck",
+        "size": 847916,
+        "sha256": "703e5785e80ca8682a507327b85028dccb19513a54507ee6b816ec584e767ede"
+      }
+    ]
+  },
+  "android-private": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T02:58:34+00:00",
+    "command": "make build-private-android",
+    "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist-private/android/MegadrivePlatformerLab-debug.apk",
+        "size": 57692845,
+        "sha256": "f2abc62466611d208a4b4c9e4ee32b6359613f705cfde4098f4711eeb0acfd3a"
+      }
+    ]
+  },
+  "ios-private": {
+    "status": "BUILT_NOT_TESTED",
+    "timestamp": "2026-10-19T14:37:35+00:00",
+    "command": "make build-private-ios",
+    "notes": "build PRIVADO com o conteúdo do jogo (uso pessoal; não compartilhar)",
+    "host": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "machine": "arm64",
+      "python": "3.9.6"
+    },
+    "artifacts": [
+      {
+        "path": "dist-private/ios/MegadrivePlatformerLab.xcodeproj/project.pbxproj",
+        "size": 16570,
+        "sha256": "1430d705be2f90e76ff3d376e6536d9511fdc12b92d9f988afae2e346947e24c"
+      },
+      {
+        "path": "dist-private/ios/MegadrivePlatformerLab.pck",
+        "size": 848508,
+        "sha256": "126d5472dae0203585594fe3ad1454422c5bc78206792626dbb8c399e4b5ad6a"
+      }
+    ]
+  }
+}

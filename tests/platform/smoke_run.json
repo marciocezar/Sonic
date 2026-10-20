@@ -1,0 +1,1 @@
+{"name": "smoke_run", "level": "lab1", "description": "Fumaça: corre à direita com saltos periódicos.", "inputs": [[30, ""], [90, "R"], [10, "RC"], [80, "R"], [12, "RC"], [200, "R"]], "frames": 420}

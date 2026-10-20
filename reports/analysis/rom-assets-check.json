@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-10-19T02:57:30+00:00",
+  "zones": {
+    "ghz": {
+      "padroes": 1536,
+      "padroes_iguais_vram": 1469,
+      "paleta_sonic_ok": true,
+      "blocks": "0x3bcf2",
+      "blocks_ok": true,
+      "plc1": "0x4",
+      "art": "0x3dcf2",
+      "plc2": "0x5",
+      "chunks": "0x3f09a",
+      "music": "0x81",
+      "pal": "0x4",
+      "pal2": "0x4"
+    },
+    "lz": {
+      "padroes": 1536,
+      "padroes_iguais_vram": 1522,
+      "paleta_sonic_ok": true,
+      "blocks": "0x411aa",
+      "blocks_ok": true,
+      "plc1": "0x6",
+      "art": "0x414d4",
+      "plc2": "0x7",
+      "chunks": "0x4301c",
+      "music": "0x82",
+      "pal": "0x5",
+      "pal2": "0x5"
+    },
+    "mz": {
+      "padroes": 1536,
+      "padroes_iguais_vram": 1410,
+      "paleta_sonic_ok": true,
+      "blocks": "0x4580c",
+      "blocks_ok": true,
+      "plc1": "0x8",
+      "art": "0x46016",
+      "plc2": "0x9",
+      "chunks": "0x4885a",
+      "music": "0x83",
+      "pal": "0x6",
+      "pal2": "0x6"
+    },
+    "slz": {
+      "padroes": 1536,
+      "padroes_iguais_vram": 1409,
+      "paleta_sonic_ok": true,
+      "blocks": "0x4a01a",
+      "blocks_ok": true,
+      "plc1": "0xa",
+      "art": "0x4a7fe",
+      "plc2": "0xb",
+      "chunks": "0x4e352",
+      "music": "0x84",
+      "pal": "0x7",
+      "pal2": "0x7"
+    },
+    "syz": {
+      "padroes": 1536,
+      "padroes_iguais_vram": 1456,
+      "paleta_sonic_ok": true,
+      "blocks": "0x50782",
+      "blocks_ok": true,
+      "plc1": "0xc",
+      "art": "0x510f0",
+      "plc2": "0xd",
+      "chunks": "0x5481c",
+      "music": "0x85",
+      "pal": "0x8",
+      "pal2": "0x8"
+    },
+    "sbz": {
+      "padroes": 1536,
+      "padroes_iguais_vram": 1499,
+      "paleta_sonic_ok": true,
+      "blocks": "0x56bcc",
+      "blocks_ok": true,
+      "plc1": "0xe",
+      "art": "0x57a66",
+      "plc2": "0xf",
+      "chunks": "0x5a212",
+      "music": "0x86",
+      "pal": "0x9",
+      "pal2": "0x9"
+    }
+  }
+}

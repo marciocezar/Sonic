@@ -1,0 +1,1 @@
+{"name": "ghz1_run_brake", "level": "ghz1", "description": "Acelera à direita, solta (atrito), acelera, freia com esquerda (skid), inverte.", "inputs": [[10, ""], [70, "R"], [40, ""], [60, "R"], [30, "L"], [40, ""]], "frames": 260}

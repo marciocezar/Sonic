@@ -1,0 +1,31 @@
+SUITE rom
+PASS ROM REV00 aceita (SHA-256)
+PASS ROM inválida rejeitada
+PASS importador GDScript ghz1: layout/chunks/colisão/início/objetos
+PASS importador GDScript ghz2: layout/chunks/colisão/início/objetos
+PASS importador GDScript ghz3: layout/chunks/colisão/início/objetos
+PASS importador GDScript lz1: layout/chunks/colisão/início/objetos
+PASS importador GDScript lz2: layout/chunks/colisão/início/objetos
+PASS importador GDScript lz3: layout/chunks/colisão/início/objetos
+PASS importador GDScript sbz3: layout/chunks/colisão/início/objetos
+PASS importador GDScript mz1: layout/chunks/colisão/início/objetos
+PASS importador GDScript mz2: layout/chunks/colisão/início/objetos
+PASS importador GDScript mz3: layout/chunks/colisão/início/objetos
+PASS importador GDScript slz1: layout/chunks/colisão/início/objetos
+PASS importador GDScript slz2: layout/chunks/colisão/início/objetos
+PASS importador GDScript slz3: layout/chunks/colisão/início/objetos
+PASS importador GDScript syz1: layout/chunks/colisão/início/objetos
+PASS importador GDScript syz2: layout/chunks/colisão/início/objetos
+PASS importador GDScript syz3: layout/chunks/colisão/início/objetos
+PASS importador GDScript sbz1: layout/chunks/colisão/início/objetos
+PASS importador GDScript sbz2: layout/chunks/colisão/início/objetos
+PASS importador GDScript fz: layout/chunks/colisão/início/objetos
+PASS rom: importação de 19 fases em 355 ms
+PASS arte ROM ghz1: padrões 1469/1536 = VRAM capturada, blocos true, paleta Sonic true
+PASS arte ROM lz1: padrões 1522/1536 = VRAM capturada, blocos true, paleta Sonic true
+PASS arte ROM mz1: padrões 1410/1536 = VRAM capturada, blocos true, paleta Sonic true
+PASS arte ROM slz1: padrões 1409/1536 = VRAM capturada, blocos true, paleta Sonic true
+PASS arte ROM syz1: padrões 1456/1536 = VRAM capturada, blocos true, paleta Sonic true
+PASS arte ROM sbz1: padrões 1499/1536 = VRAM capturada, blocos true, paleta Sonic true
+PASS rom: arte de 6 zonas decodificada em 9 ms
+TOTAL pass=29 fail=0

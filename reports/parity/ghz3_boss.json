@@ -1,0 +1,53 @@
+{
+  "replay": "ghz3_boss",
+  "status": "DIVERGE_FRONTEIRA",
+  "frontier": "chefe GHZ (0x3D/0x48) ainda não reconstruído",
+  "frames_compared": 1059,
+  "stop": "fim do replay",
+  "first_divergence_frame": 1059,
+  "strict_first": {
+    "xv": {
+      "frame": 1059,
+      "ref": 0,
+      "got": -1115,
+      "input": "L"
+    },
+    "yv": {
+      "frame": 1059,
+      "ref": -1792,
+      "got": 1064,
+      "input": "L"
+    },
+    "gs": {
+      "frame": 1059,
+      "ref": 0,
+      "got": -659,
+      "input": "L"
+    },
+    "rt": {
+      "frame": 1059,
+      "ref": 6,
+      "got": 2,
+      "input": "L"
+    }
+  },
+  "strict_mismatch_frames": {
+    "xv": 1,
+    "yv": 1,
+    "gs": 1,
+    "rt": 1
+  },
+  "soft_first": {
+    "anim": {
+      "frame": 1059,
+      "ref": 24,
+      "got": 0,
+      "input": "L"
+    }
+  },
+  "soft_mismatch_frames": {
+    "anim": 1
+  },
+  "tolerance": 0,
+  "timestamp": "2026-10-19T02:57:46+00:00"
+}

@@ -1,0 +1,13 @@
+SUITE touch
+PASS direcional: direita
+PASS multitoque: direita + C
+PASS arrastar entre botões: C -> B
+PASS diagonal direita+cima
+PASS zona morta no centro
+PASS soltar remove botão
+PASS toque fora dos controles não gera botão
+PASS cancelamento evita teclas presas
+PASS start
+PASS área segura desloca direcional
+PASS escala aumenta raio
+TOTAL pass=11 fail=0

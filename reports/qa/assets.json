@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-18T22:35:22+00:00",
+  "inventory": [
+    {
+      "path": "game/icon.svg",
+      "size": 361,
+      "license": "próprio (desenhado em SVG para o projeto)"
+    },
+    {
+      "path": "game/data/levels/lab1.json",
+      "size": 50027,
+      "license": "próprio (gerado por tooling/gen_demo_level.py)"
+    }
+  ],
+  "issues": [],
+  "policy": "docs/security/distribuicao-assets.md"
+}

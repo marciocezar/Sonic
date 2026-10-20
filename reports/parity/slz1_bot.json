@@ -1,0 +1,308 @@
+{
+  "replay": "slz1_bot",
+  "status": "DIVERGE_FRONTEIRA",
+  "frontier": "objetos da zona ainda não reconstruídos; replay usado para validar plano de fundo/deformação até a 1ª divergência",
+  "frames_compared": 901,
+  "stop": "fim do replay",
+  "first_divergence_frame": 345,
+  "strict_first": {
+    "xv": {
+      "frame": 345,
+      "ref": -512,
+      "got": 1453,
+      "input": "RC"
+    },
+    "yv": {
+      "frame": 345,
+      "ref": -1024,
+      "got": 0,
+      "input": "RC"
+    },
+    "gs": {
+      "frame": 345,
+      "ref": 0,
+      "got": 1453,
+      "input": "RC"
+    },
+    "st": {
+      "frame": 345,
+      "ref": 2,
+      "got": 0,
+      "input": "RC"
+    },
+    "rt": {
+      "frame": 345,
+      "ref": 4,
+      "got": 2,
+      "input": "RC"
+    },
+    "camy": {
+      "frame": 345,
+      "ref": 359,
+      "got": 364,
+      "input": "RC"
+    },
+    "rings": {
+      "frame": 345,
+      "ref": 0,
+      "got": 3,
+      "input": "RC"
+    },
+    "bgy": {
+      "frame": 345,
+      "ref": 24346624,
+      "got": 24510464,
+      "input": "RC"
+    },
+    "bgv": {
+      "frame": 345,
+      "ref": 371,
+      "got": 374,
+      "input": "RC"
+    },
+    "hsb": {
+      "frame": 345,
+      "ref": [
+        [
+          -534,
+          13
+        ],
+        [
+          -509,
+          16
+        ],
+        [
+          -484,
+          16
+        ],
+        [
+          -458,
+          16
+        ],
+        [
+          -433,
+          16
+        ],
+        [
+          -407,
+          16
+        ],
+        [
+          -382,
+          16
+        ],
+        [
+          -357,
+          16
+        ],
+        [
+          -331,
+          16
+        ],
+        [
+          -306,
+          16
+        ],
+        [
+          -281,
+          16
+        ],
+        [
+          -255,
+          16
+        ],
+        [
+          -230,
+          16
+        ],
+        [
+          -204,
+          16
+        ],
+        [
+          -179,
+          3
+        ]
+      ],
+      "got": [
+        [
+          -534,
+          10
+        ],
+        [
+          -509,
+          16
+        ],
+        [
+          -484,
+          16
+        ],
+        [
+          -458,
+          16
+        ],
+        [
+          -433,
+          16
+        ],
+        [
+          -407,
+          16
+        ],
+        [
+          -382,
+          16
+        ],
+        [
+          -357,
+          16
+        ],
+        [
+          -331,
+          16
+        ],
+        [
+          -306,
+          16
+        ],
+        [
+          -281,
+          16
+        ],
+        [
+          -255,
+          16
+        ],
+        [
+          -230,
+          16
+        ],
+        [
+          -204,
+          16
+        ],
+        [
+          -179,
+          6
+        ]
+      ],
+      "input": "RC"
+    },
+    "x": {
+      "frame": 346,
+      "ref": 971,
+      "got": 979,
+      "input": "RC"
+    },
+    "xs": {
+      "frame": 346,
+      "ref": 21248,
+      "got": 3072,
+      "input": "RC"
+    },
+    "y": {
+      "frame": 346,
+      "ref": 456,
+      "got": 460,
+      "input": "RC"
+    },
+    "camx": {
+      "frame": 346,
+      "ref": 813,
+      "got": 819,
+      "input": "RC"
+    },
+    "bgx": {
+      "frame": 346,
+      "ref": 26640384,
+      "got": 26836992,
+      "input": "RC"
+    },
+    "frm": {
+      "frame": 346,
+      "ref": 85,
+      "got": 11,
+      "input": "RC"
+    },
+    "ys": {
+      "frame": 347,
+      "ref": 2048,
+      "got": 55296,
+      "input": "RC"
+    },
+    "ang": {
+      "frame": 442,
+      "ref": 0,
+      "got": 6,
+      "input": "RC"
+    },
+    "yr": {
+      "frame": 442,
+      "ref": 14,
+      "got": 19,
+      "input": "RC"
+    },
+    "xr": {
+      "frame": 442,
+      "ref": 7,
+      "got": 9,
+      "input": "RC"
+    }
+  },
+  "strict_mismatch_frames": {
+    "xv": 555,
+    "yv": 507,
+    "gs": 556,
+    "st": 315,
+    "rt": 44,
+    "camy": 556,
+    "rings": 556,
+    "bgy": 556,
+    "bgv": 556,
+    "hsb": 556,
+    "x": 555,
+    "xs": 554,
+    "y": 555,
+    "camx": 555,
+    "bgx": 555,
+    "frm": 511,
+    "ys": 552,
+    "ang": 290,
+    "yr": 149,
+    "xr": 149
+  },
+  "soft_first": {
+    "anim": {
+      "frame": 345,
+      "ref": 26,
+      "got": 0,
+      "input": "RC"
+    },
+    "inv": {
+      "frame": 345,
+      "ref": 120,
+      "got": 0,
+      "input": "RC"
+    },
+    "jmp": {
+      "frame": 442,
+      "ref": 1,
+      "got": 0,
+      "input": "RC"
+    },
+    "lock": {
+      "frame": 679,
+      "ref": 0,
+      "got": 30,
+      "input": "R"
+    }
+  },
+  "soft_mismatch_frames": {
+    "anim": 193,
+    "inv": 164,
+    "jmp": 149,
+    "lock": 58
+  },
+  "tolerance": 0,
+  "timestamp": "2026-10-19T02:57:50+00:00"
+}

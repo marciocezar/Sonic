@@ -1,0 +1,1 @@
+{"name": "ghz1_ledge", "level": "ghz1", "pokes": [[30, {"x": 3792, "y": 512}], [300, {"x": 4144, "y": 624}]], "description": "Sonic posicionado sobre a plataforma que desmorona (0x1A, x=0x1030) e parado: pouso, contagem e desmoronamento.", "inputs": [[600, ""]], "frames": 600}

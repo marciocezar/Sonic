@@ -1,0 +1,150 @@
+{
+  "timestamp": "2026-10-18T23:46:02+00:00",
+  "note": "Verificação estrutural; não implica teste de execução.",
+  "targets": {
+    "macos": {
+      "entries": 7,
+      "macho_magic": "cafebabe",
+      "bundle_id_ok": true,
+      "files": [
+        {
+          "path": "dist/macos/MegadrivePlatformerLab.zip",
+          "size": 60904645,
+          "sha256": "87e3aeed2e6e74038147cf7f898cec56de127b45ac5762d83b9f5febbfd3e359"
+        }
+      ],
+      "result": "OK"
+    },
+    "windows": {
+      "machine": "0x8664",
+      "pe_ok": true,
+      "pck_ok": true,
+      "files": [
+        {
+          "path": "dist/windows/MegadrivePlatformerLab.exe",
+          "size": 109268480,
+          "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+        },
+        {
+          "path": "dist/windows/MegadrivePlatformerLab.pck",
+          "size": 267716,
+          "sha256": "99d8d7afd072364e63db477034155394857af30f9f32e034c1da64fe3bd13f45"
+        }
+      ],
+      "result": "OK"
+    },
+    "web": {
+      "wasm_ok": true,
+      "pck_ok": true,
+      "js_ok": true,
+      "file_protocol_embed": true,
+      "file_protocol_loader": true,
+      "files": [
+        {
+          "path": "dist/web/index.apple-touch-icon.png",
+          "size": 9365,
+          "sha256": "fa65e6a0eef67f5a8441dcb79d7f2995a961833a2965889e8acd6b733158fd7a"
+        },
+        {
+          "path": "dist/web/index.audio.position.worklet.js",
+          "size": 2973,
+          "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+        },
+        {
+          "path": "dist/web/index.audio.worklet.js",
+          "size": 7298,
+          "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+        },
+        {
+          "path": "dist/web/index.embed.js",
+          "size": 53058520,
+          "sha256": "132e343f6b7bbf0c14609c864294a01fb672622b02efc489dd31bc400cf99dfa"
+        },
+        {
+          "path": "dist/web/index.html",
+          "size": 6897,
+          "sha256": "adb1fce04b60fd739e28572d59c4e20f7e3e4ad064388aaeea7726123db57594"
+        },
+        {
+          "path": "dist/web/index.icon.png",
+          "size": 4331,
+          "sha256": "aba023f37e40137149efd3318970fce830954842317db6a47f4a12fddf722685"
+        },
+        {
+          "path": "dist/web/index.js",
+          "size": 279815,
+          "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+        },
+        {
+          "path": "dist/web/index.pck",
+          "size": 268772,
+          "sha256": "93ab13c3d1347bab7853255d29167d928e48486017e8e25c881e8f9a616d7f7b"
+        },
+        {
+          "path": "dist/web/index.png",
+          "size": 21443,
+          "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+        },
+        {
+          "path": "dist/web/index.wasm",
+          "size": 39514754,
+          "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+        },
+        {
+          "path": "dist/web/staticwebapp.config.json",
+          "size": 187,
+          "sha256": "2255237637d5c7c2b7d450738785805560f4c95a1cf3b9c0d717d6177f7b39a0"
+        },
+        {
+          "path": "dist/web/web.config",
+          "size": 1035,
+          "sha256": "bda8044de3d2b6da599996383d5aa24d73f9784bbc8e8040f446e244c4f53d3a"
+        }
+      ],
+      "result": "OK"
+    },
+    "android": {
+      "manifest": true,
+      "dex": true,
+      "libs": [
+        "arm64-v8a",
+        "x86_64"
+      ],
+      "game_assets": 127,
+      "signature_v2_block": true,
+      "files": [
+        {
+          "path": "dist/android/MegadrivePlatformerLab-debug.apk",
+          "size": 57256655,
+          "sha256": "40ee2302919cf89b3d2088a5ba4bcd56e50e63c0d3ba6443d90369206b119f42"
+        }
+      ],
+      "signing": "debug (keystore local de depuração); release exige keystore própria",
+      "result": "OK"
+    },
+    "ios": {
+      "pbxproj_ok": true,
+      "pck_ok": true,
+      "xcframework": [
+        "MegadrivePlatformerLab.xcframework",
+        "libgodot_camera.visionos.debug.xcframework",
+        "libgodot_camera.visionos.release.xcframework",
+        "MoltenVK.xcframework"
+      ],
+      "ipa": "não gerado (exige assinatura)",
+      "files": [
+        {
+          "path": "dist/ios/MegadrivePlatformerLab.xcodeproj/project.pbxproj",
+          "size": 16570,
+          "sha256": "1430d705be2f90e76ff3d376e6536d9511fdc12b92d9f988afae2e346947e24c"
+        },
+        {
+          "path": "dist/ios/MegadrivePlatformerLab.pck",
+          "size": 267764,
+          "sha256": "2cfa9d2c9be680cdc22947a9f82b4775d21337c2a4e0a8d0b8bfd1ec26457f46"
+        }
+      ],
+      "result": "OK"
+    }
+  }
+}

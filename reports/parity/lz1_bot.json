@@ -1,0 +1,203 @@
+{
+  "replay": "lz1_bot",
+  "status": "DIVERGE_FRONTEIRA",
+  "frontier": "objetos da zona ainda não reconstruídos; replay usado para validar plano de fundo/deformação até a 1ª divergência",
+  "frames_compared": 901,
+  "stop": "fim do replay",
+  "first_divergence_frame": 114,
+  "strict_first": {
+    "xv": {
+      "frame": 114,
+      "ref": 1536,
+      "got": 768,
+      "input": "RC"
+    },
+    "yv": {
+      "frame": 114,
+      "ref": 784,
+      "got": 196,
+      "input": "RC"
+    },
+    "st": {
+      "frame": 114,
+      "ref": 2,
+      "got": 66,
+      "input": "RC"
+    },
+    "x": {
+      "frame": 115,
+      "ref": 486,
+      "got": 483,
+      "input": "RC"
+    },
+    "y": {
+      "frame": 115,
+      "ref": 195,
+      "got": 193,
+      "input": "RC"
+    },
+    "ys": {
+      "frame": 115,
+      "ref": 59392,
+      "got": 39936,
+      "input": "RC"
+    },
+    "camx": {
+      "frame": 115,
+      "ref": 326,
+      "got": 323,
+      "input": "RC"
+    },
+    "bgx": {
+      "frame": 115,
+      "ref": 10682368,
+      "got": 10584064,
+      "input": "RC"
+    },
+    "hsb": {
+      "frame": 115,
+      "ref": [
+        [
+          -163,
+          224
+        ]
+      ],
+      "got": [
+        [
+          -161,
+          224
+        ]
+      ],
+      "input": "RC"
+    },
+    "gs": {
+      "frame": 120,
+      "ref": 768,
+      "got": 1536,
+      "input": "R"
+    },
+    "camy": {
+      "frame": 120,
+      "ref": 82,
+      "got": 76,
+      "input": "R"
+    },
+    "bgy": {
+      "frame": 120,
+      "ref": 2686976,
+      "got": 2490368,
+      "input": "R"
+    },
+    "bgv": {
+      "frame": 120,
+      "ref": 41,
+      "got": 38,
+      "input": "R"
+    },
+    "frm": {
+      "frame": 121,
+      "ref": 11,
+      "got": 33,
+      "input": "R"
+    },
+    "time": {
+      "frame": 126,
+      "ref": 521,
+      "got": 522,
+      "input": "R"
+    },
+    "xs": {
+      "frame": 141,
+      "ref": 56832,
+      "got": 55296,
+      "input": "R"
+    },
+    "score": {
+      "frame": 206,
+      "ref": 10,
+      "got": 0,
+      "input": "R"
+    },
+    "yr": {
+      "frame": 213,
+      "ref": 14,
+      "got": 19,
+      "input": "RC"
+    },
+    "xr": {
+      "frame": 213,
+      "ref": 7,
+      "got": 9,
+      "input": "RC"
+    },
+    "rings": {
+      "frame": 297,
+      "ref": 5,
+      "got": 4,
+      "input": "R"
+    },
+    "rt": {
+      "frame": 328,
+      "ref": 4,
+      "got": 2,
+      "input": "RC"
+    }
+  },
+  "strict_mismatch_frames": {
+    "xv": 748,
+    "yv": 602,
+    "st": 417,
+    "x": 576,
+    "y": 649,
+    "ys": 786,
+    "camx": 573,
+    "bgx": 573,
+    "hsb": 568,
+    "gs": 764,
+    "camy": 615,
+    "bgy": 615,
+    "bgv": 610,
+    "frm": 577,
+    "time": 775,
+    "xs": 754,
+    "score": 695,
+    "yr": 229,
+    "xr": 229,
+    "rings": 581,
+    "rt": 46
+  },
+  "soft_first": {
+    "rng": {
+      "frame": 117,
+      "ref": 1628824826,
+      "got": 0,
+      "input": "RC"
+    },
+    "anim": {
+      "frame": 213,
+      "ref": 2,
+      "got": 0,
+      "input": "RC"
+    },
+    "jmp": {
+      "frame": 213,
+      "ref": 1,
+      "got": 0,
+      "input": "RC"
+    },
+    "inv": {
+      "frame": 328,
+      "ref": 120,
+      "got": 0,
+      "input": "RC"
+    }
+  },
+  "soft_mismatch_frames": {
+    "rng": 784,
+    "anim": 245,
+    "jmp": 229,
+    "inv": 166
+  },
+  "tolerance": 0,
+  "timestamp": "2026-10-19T02:57:48+00:00"
+}

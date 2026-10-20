@@ -1,0 +1,14 @@
+{
+  "replay": "ghz2_bot",
+  "status": "IDENTICO",
+  "frontier": null,
+  "frames_compared": 1884,
+  "stop": "fim do replay",
+  "first_divergence_frame": null,
+  "strict_first": {},
+  "strict_mismatch_frames": {},
+  "soft_first": {},
+  "soft_mismatch_frames": {},
+  "tolerance": 0,
+  "timestamp": "2026-10-19T02:57:45+00:00"
+}

@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-10-18T20:19:26+00:00",
+  "host": {
+    "system": "Darwin",
+    "release": "27.0.0",
+    "machine": "arm64",
+    "python": "3.9.6"
+  },
+  "rows": [
+    {
+      "item": "ROM deste jogo",
+      "ok": true,
+      "detail": "Sonic The Hedgehog (USA, Europe).md",
+      "remediation": "copie o arquivo para a raiz",
+      "blocks": "análise/paridade"
+    },
+    {
+      "item": "Python 3",
+      "ok": true,
+      "detail": "3.9.6",
+      "remediation": "",
+      "blocks": ""
+    },
+    {
+      "item": "GNU Make",
+      "ok": true,
+      "detail": "GNU Make 3.81",
+      "remediation": "Windows: MSYS2 (pacman -S make)",
+      "blocks": ""
+    },
+    {
+      "item": "Godot 4.7.2-stable",
+      "ok": true,
+      "detail": "4.7.2.stable.official.ed1daf0bf",
+      "remediation": "make bootstrap COMPONENTS=godot",
+      "blocks": "run/test/build"
+    },
+    {
+      "item": "Export templates",
+      "ok": true,
+      "detail": "tooling/godot/editor_data/export_templates/4.7.2.stable",
+      "remediation": "make bootstrap COMPONENTS=templates",
+      "blocks": "build-*"
+    },
+    {
+      "item": "REA local",
+      "ok": true,
+      "detail": "rea-agents 6.7.0",
+      "remediation": "make bootstrap COMPONENTS=rea",
+      "blocks": ""
+    },
+    {
+      "item": "Ghidra local",
+      "ok": true,
+      "detail": "12.1.4",
+      "remediation": "make bootstrap COMPONENTS=ghidra",
+      "blocks": ""
+    },
+    {
+      "item": "Node.js",
+      "ok": true,
+      "detail": "v24.18.0",
+      "remediation": "necessário apenas para REA",
+      "blocks": ""
+    },
+    {
+      "item": "sandbox-exec (macOS)",
+      "ok": true,
+      "detail": "isolamento REA/Ghidra",
+      "remediation": "sem sandbox: REA/Ghidra não rodam",
+      "blocks": ""
+    },
+    {
+      "item": "ANDROID_HOME",
+      "ok": false,
+      "detail": "não definido",
+      "remediation": "defina ANDROID_HOME (ver .env.example)",
+      "blocks": "build-android"
+    },
+    {
+      "item": "JDK 17+",
+      "ok": true,
+      "detail": "openjdk version \"26.0.1\" 2026-04-21",
+      "remediation": "defina JAVA_HOME",
+      "blocks": "android"
+    },
+    {
+      "item": "Xcode",
+      "ok": true,
+      "detail": "Xcode 27.1",
+      "remediation": "instale o Xcode",
+      "blocks": "ios"
+    },
+    {
+      "item": "IOS_TEAM_ID",
+      "ok": false,
+      "detail": "não definido",
+      "remediation": "necessário apenas para IPA assinado",
+      "blocks": "ios-archive"
+    },
+    {
+      "item": "Windows host p/ teste",
+      "ok": false,
+      "detail": "build Windows é exportada aqui; execução exige Windows/VM",
+      "remediation": "",
+      "blocks": ""
+    }
+  ]
+}
